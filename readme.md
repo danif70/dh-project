@@ -1,6 +1,6 @@
 # PROYECTO BOOTCAMP FULLSTACK
 ## ¿Qué ofrecemos?
-Soluciones digitales que puedan ser implementadas en pequeños emprendimientos. Nos mueve ayudar a otros y acercarles la tecnología para lograr impulsar sus negocios e ideas.
+Soluciones ~~digitales~~ que puedan ser implementadas en pequeños emprendimientos. Nos mueve ayudar a otros y acercarles la tecnología para lograr impulsar sus negocios e ideas.
 
 ## Temática a desarrollar y público objetivo
 Realizaremos un market place para un negocio familiar de pastelería y repostería. Esta pastelería ofrece productos como tortas, galletas, bollería diversa. Cuenta con servicio a la calle y además atienden pedidos a domicilio para quienes encargan por teléfono. Las ventas han aumentado mucho y por solicitud de varios clientes, en el negocio han visto necesario ofrecer una alternativa que permita que sus productos sean adquiridos de manera online.
