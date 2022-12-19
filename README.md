@@ -20,7 +20,9 @@ Esta página nos gustó porque es un home que de entrada muestra las acciones pr
 
 ## Breve descripción del equipo
 + **Alejandro Restrepo**: Soy de Medellín, Colombia. Estoy cursando el último semestre de Física. Me gusta mucho la tecnología y poder utilizarla para ayudar a otr@s.
-+ **Daniela Funes**: Soy de Caracas, pero vivo en Bogotá hace 5 años. Fuí educadora muchos años hasta que me formé como Desarrolladora Frontend hace 1 año.
++ **Daniela Funes**: Soy de Caracas, pero vivo en Bogotá hace 5 años. Fuí educadora muchos años hasta que me formé como Desarrolladora Frontend hace 1 año. Actualmente soy Desarrolladora de Software en Mercado Libre.
 + **Ramiro Burgio**:Soy de Buenos Aires, Argentina. Soy estudiante de Licenciatura en Administración. Empleado bancario hace 10 años y ahora explorando la programación como alternativa a mi desarrollo personal.
-+ **Ma Paulina Olaya**
-+ **Tomás Giaveno**
++ **Ma Paulina Olaya**:De Medellín, Colombia. Joven empírica en el área de desarrollo web y diseño de modas. Queriendo aprender más de manera que pueda unir mis dos mundos.
++ **Tomás Giaveno**: Soy de Rosario, Argentina. Licenciado en Producción y Realizacion Audiovisual. Estudio Programación como un desafío personal y una alternativa laboral mucho más estable.
+# Wireframes
+[Figma](https://www.figma.com/file/qQVZVE5IPBZ467WmkfjLMD/App-para-Pasteler%C3%ADa?node-id=0%3A1&t=hlml8Rj59q6JsCiT-0)
