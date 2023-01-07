@@ -1,0 +1,34 @@
+{
+  "name": "grupo_8_dh-project",
+  "version": "1.0.0",
+  "description": "Web App with e-commerce functionality for a local bakery business.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danif70/grupo_8_dh-project.git"
+  },
+  "keywords": [],
+  "author": "Group 8 Digital House",
+  "contributors": [
+    "Alejandro Restrepo <arestrepogiraldo@gmail.com>",
+    "Daniela Funes <danielafunesv@gmail.com>",
+    "Paulina Olaya <paulinaolaya1@gmail.com>",
+    "Tomas Giaveno <tomasgiaveno@gmail.com>"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danif70/grupo_8_dh-project/issues"
+  },
+  "homepage": "https://github.com/danif70/grupo_8_dh-project#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
