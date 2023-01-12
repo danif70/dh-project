@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <div classs = "help">
+            <i class="fa-solid fa-question" id = "question">
+                <a href="/"></a>
+            </i>
+        </div>
+    </header>
+
+    <main>
+
+        <div class = "welcome">
+            <img src="images/logo.svg" alt="Logo" />
+            <section class = "mensaje">
+                <h2 class = "mensaje1">¡Bienvenido!</h2>
+                <p class="mensaje2"> 
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus vel quae accusantium nihil laudantium.
+                </p>
+            </section>
+            
+        </div>
+
+
+        <form action="/register" method = "post">
+
+            <label for="nombre"></label>
+            <div class = "input">Nombre</div>
+            <input type="text" name="nombre" id="nombre" required>
+            <div class = "nota">Ingrésalo tal como aparece en tu documento.</div>
+    
+            <label for="apellido"></label>
+            <div class = "input">Apellido</div>
+            <input type="text" name="apellido" id="apellido" required>  
+            <div class = "nota">Ingrésalo tal como aparece en tu documento.</div>  
+            
+            <label for="id"></label>
+            <div class = "input">Documento de identidad</div>
+            <input type="number" name="id" id="id" placeholder="ID" required> 
+    
+            <label for="nacimiento"></label>
+            <div class = "input">Fecha de nacimiento</div>
+            <input type="date" name="nacimiento" id="nacimiento" required> 
+    
+            <label for="email"></label>
+            <div class = "input">E-mail</div>
+            <input type="email" name = "email" id = "email" required>
+    
+            <label for="pais"></label>
+            <div class = "input">País</div>
+            <select name="pais" id="pais" required>
+                <option value="Escoger">Escoger país</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Perú">Perú</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+            </select>
+    
+            <label for="ciudad"></label>
+            <div class = "input">Ciudad</div>
+            <input type="text" name = "ciudad" id = "ciudad" required>
+    
+            <label for="direccion"></label>
+            <div class = "input">Dirección</div>
+            <input type="text" name = "direccion" id = "direccion" required>
+    
+            <label for="contraseña"></label>
+            <div class = "input">Contraseña</div>
+            <input type="password" name="contraseña" id="contraseña" required>
+    
+            <label for="repcontraseña"></label>
+            <div class = "input">Verificar contraseña</div>
+            <input type="password" name="repcontraseña" id="repcontraseña" required>
+
+            <div class = "check">
+                <label for="terminos"></label>
+                <input type="checkbox" name = "terminos" id = "terminos" required>Acepto los términos y condiciones
+            </div>
+    
+            <div class = "button_container">
+                <button class = "registrarse"> Registrarse
+                    <a href="#"></a>
+                </button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+          <div class="contact-info">
+            <p>Phone: 123-456-789</p>
+            <p>Email: example@example.com</p>
+          </div>
+          <div class="copy-right">
+            <p>© 2023 Digital Cake</p>
+          </div>
+          <div class="social-media">
+            <div class="social-media-icons">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-twitter"></i>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+</body>
+</html>
