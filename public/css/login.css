@@ -29,6 +29,7 @@ header{
 /* main --------------------------------------------------------------------*/
 
 main{
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
     background-color: #f9f7f8;
     height: 100%;
     text-align: center;
@@ -92,8 +93,8 @@ main{
   }
   
 .marca{
+    font-family: 'Lobster', Georgia, Times, serif;
     margin: 20px;
-
 }
 
 
@@ -145,6 +146,7 @@ main{
 /* footer -------------------------------*/
 
 footer {
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
     background-color: #dfd9dd;
 }
 
