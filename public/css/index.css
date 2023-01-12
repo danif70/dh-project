@@ -11,18 +11,25 @@ nav {
   padding: 0.5rem 1rem;
 }
 
+h1{
+  font-family: 'Lobster', Georgia, Times, serif;
+}
+
 nav .titles {
+  font-family: 'Lobster', Georgia, Times, serif;
   display: flex;
   flex-direction: row;
 }
 
 .main-title {
+  font-family: 'Lobster', Georgia, Times, serif;
   font-size: 1.5rem;
   font-weight: 600;
   padding: 0.8rem 0;
 }
 
 .sub-title {
+  font-family: 'Lobster', Georgia, Times, serif;
   font-size: 1rem;
   font-weight: 400;
   padding: 0.9rem 0;
@@ -34,6 +41,7 @@ nav .titles {
 }
 
 .titles p {
+  font-family: 'Lobster', Georgia, Times, serif;
   margin: 0 10px;
 }
 
@@ -78,6 +86,7 @@ nav .titles {
 }
 
 .info-text {
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
   width: 50%;
   padding: 0 1rem;
   margin-right: 1rem;
@@ -127,6 +136,7 @@ nav .titles {
 }
 
 footer {
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
   background-color: #dfd9dd;
 }
 
@@ -158,20 +168,24 @@ footer {
 
 @media (min-width: 360px) {
   .sub-title {
+    font-family: 'Lobster', Georgia, Times, serif;
     display: none;
   }
 
   .log-in span {
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
     display: none;
   }
 }
 
 @media (min-width: 768px) {
   .sub-title {
+    font-family: 'Lobster', Georgia, Times, serif;
     display: block;
   }
 
   .log-in span {
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
     display: inline-block;
   }
 }
