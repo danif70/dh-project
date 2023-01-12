@@ -41,6 +41,7 @@ header{
 /* main --------------------------------------------------------------------*/
 
 main{
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
     background-color: #f9f7f8;
     height: 100%;
     text-align: center;
@@ -144,6 +145,7 @@ img {
 }
 
 .mensaje1{
+    font-family: 'Lobster', Georgia, Times, serif;
     padding-left: 20px;
     padding-top: 20px;
     align-self: flex-start;
@@ -152,6 +154,7 @@ img {
 
 
 .mensaje2{
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
     max-width:300px;
     padding: 20px;
     align-self: flex-end;
@@ -177,6 +180,7 @@ img {
     }
     
     .mensaje1{
+        font-family: 'Lobster', Georgia, Times, serif;
         padding-left: 20px;
         padding-top: 20px;
         align-self: flex-start;
@@ -196,6 +200,7 @@ img {
 /* footer -------------------------------*/
 
 footer {
+    font-family: 'Cabin', Helvetica, Arial, sans-serif;
     background-color: #dfd9dd;
 }
 
@@ -227,6 +232,7 @@ padding: 0 0.5rem;
 @media (min-width: 560px) {
 
     footer {
+        font-family: 'Cabin', Helvetica, Arial, sans-serif;
         background-color: #dfd9dd;
       }
       
