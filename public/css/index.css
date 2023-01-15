@@ -177,7 +177,9 @@ footer {
     display: none;
   }
 }
-
+a {
+  cursor: pointer;
+}
 @media (min-width: 768px) {
   .sub-title {
     font-family: 'Lobster', Georgia, Times, serif;
