@@ -23,6 +23,11 @@ app.get('/cart', (req, res) => {
   res.sendFile(path.join(__dirname, '/src/views/shoppingcart.html'));
 });
 
+app.get('/product-detail', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src/views/product-detail.html'));
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
