@@ -5,6 +5,7 @@ const login = require('./src/routers/login');
 const product = require('./src/routers/product-detail')
 const register = require('./src/routers/register');
 const cart = require('./src/routers/shoppingcart');
+const admin = require('./src/routers/admin')
 
 
 
@@ -20,7 +21,7 @@ app.use(login);
 app.use(product);
 app.use(register);
 app.use(cart);
-
+app.use(admin);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
