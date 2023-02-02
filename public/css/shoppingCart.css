@@ -23,7 +23,7 @@ header {
   justify-content: space-between;
   padding: 20px;
   text-align: right;
-  width: 100vw;
+  width: 100%;
 }
 
 #question {

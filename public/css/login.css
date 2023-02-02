@@ -179,6 +179,9 @@ padding: 0 0.5rem;
 
     footer {
         background-color: #dfd9dd;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
       }
       
       .footer-container {

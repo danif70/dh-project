@@ -145,6 +145,9 @@ main {
 footer {
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   background-color: #dfd9dd;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-container {
@@ -176,6 +179,9 @@ footer {
   footer {
     font-family: 'Cabin', Helvetica, Arial, sans-serif;
     background-color: #dfd9dd;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 
   .footer-container {

@@ -14,28 +14,52 @@
 }
 
 /* Header --------------------------------------------------------------------*/
-
-header{
-    width: 100%;
-    height: 40px;
+header {
+    align-items: center;
     background-color: #dfd9dd;
-    text-align: right;
     border-bottom: solid #bea28c 3px;
-}
-
-
-#question{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Lobster', Georgia, Times, serif;
+    height: auto;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: right;
+    width: 100%;
+  }
+  
+  #question {
     background-color: white;
     border-radius: 50%;
-    padding: 5px 9px 5px 0px;
-
-    width: 28px;
     height: 25px;
-
+    padding: 5px 9px 5px 0px;
     position: relative;
     right: 20px;
     top: 6px;
-}
+    width: 28px;
+  }
+  
+  #logo {
+    border: solid #af762f 1px;
+    border-radius: 50%;
+    width: 150px;
+  }
+  
+  .titles {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    margin-left: -110px;
+  }
+  
+  .sub-title {
+    font-size: 24px;
+  }
+  
+  .main-title {
+    font-size: 42px;
+  }
 
 
 /* main --------------------------------------------------------------------*/
@@ -55,8 +79,11 @@ form{
 
 }
 
-#nombre ,#apellido ,#id ,#nacimiento ,#email ,#pais ,#ciudad ,#direccion ,#contraseña ,#repcontraseña{
+label{
+    align-self: flex-start;
+}
 
+.input{
     margin: 10px;
     border: none;
     height: 35px;
@@ -67,35 +94,26 @@ form{
     border: solid #af762f 1px;
 }
 
-#pais, #nacimiento{
-    padding-right: 10px;
-    background-color: white;
-}
-
-
-#terminos{
+.select{
     margin: 10px;
     border: none;
+    height: 35px;
+    width: 80%;
     border-radius:5px;
     padding-left: 20px;
     max-width: 700px;
     border: solid #af762f 1px;
 }
 
-.nota{
-    width: 80%;
-    max-width: 700px;
-    text-align: left;
-    position: relative;
-    left: 10px;
-    bottom: 6px;
-    color: gray;
-    font-size: small;
-    padding-bottom: 5px;
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
-
-.registrarse{
+.añadir{
+    font-family: Cabin;
+    font-size: 15px;
     margin: 10px;
     border: none;
     height: 35px;
@@ -104,27 +122,12 @@ form{
     min-width: 100px;
     background-color: #af762f;
     color: white;
-    font-weight: bold;
 }
 
-.check, .button_container{
-    width: 80%;
-    text-align: left;
-    max-width: 700px;
-    padding-left: 20px;
+.button_container{
     margin: 10px;
-}
-
-
-.input{
     width: 80%;
-    max-width: 700px;
-    text-align: left;
-    position: relative;
-    left: 10px;
 }
-
-
 
 .welcome{
     display: flex;
@@ -158,6 +161,36 @@ img {
     max-width:300px;
     padding: 20px;
     align-self: flex-end;
+}
+
+.container-file{
+    margin: 10px;
+    height: 35px;
+}
+
+.inputfile {
+    height: 35px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile-1 + label {
+    color: #fff;
+    display: flex;
+    background-color: #c39f77;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    width: 82%;
+}
+
+.inputfile-1:focus + label,
+.inputfile-1.has-focus + label,
+.inputfile-1 + label:hover {
+    background-color: #9f8465;
+    cursor: pointer;
 }
 
 @media (min-width: 492px) {
