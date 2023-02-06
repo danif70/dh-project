@@ -4,35 +4,40 @@
         "name":"Limonada de menta",
         "description":"Limonada de menta",
         "price":"50",
-        "image":"/images/products/product_1.jpg" 
+        "image":"/images/products/product_1.jpg",
+        "category" :  "pastel"
     },
     {
         "id" : 2,
         "name":"Pastel de cumpleaños",
         "description":"Pastel de cumpleaños",
         "price":"200",
-        "image":"/images/products/product_2.jpg" 
+        "image":"/images/products/product_2.jpg",
+        "category" :  "pastel"
     },
     {
         "id" : 3,
         "name":"Cheesecake de mora",
         "description":"Cheesecake de mora",
         "price":"300",
-        "image":"/images/products/product_3.jpg"
+        "image":"/images/products/product_3.jpg",
+        "category" : "pastel"
     },
     {
         "id" : 4,
         "name":"Torta de nuez",
         "description":"Torta de nuez",
         "price":"500",
-        "image":"/images/products/product_4.jpg"
+        "image":"/images/products/product_4.jpg",
+        "category" : "pastel"
     },
     {
         "id" : 5,
         "name":"Maccaroons",
         "description":"Maccaroons",
         "price":"800",
-        "image":"/images/products/product_5.jpg"
+        "image":"/images/products/product_5.jpg",
+        "category" : "pastel"
     }
 
 ]

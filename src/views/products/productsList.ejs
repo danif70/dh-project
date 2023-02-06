@@ -36,7 +36,7 @@
             <% for (let i = 0; i< productsarray.length; i++){ %>
 
                 <div class = "section">
-                    <a href="/product-detail/<%= productsarray[i].id %>"><img src="/images/products/product_<%= i+1 %>.jpg" class="images"></a>
+                    <a href="/product-detail/<%= productsarray[i].id %>"><img src="<%= productsarray[i].image %>" class="images"></a>
                     <br>
                     <h3><%= productsarray[i].name %></h3>
                 </div>
@@ -45,6 +45,9 @@
 
         </div>
 
+        <div class = "add">
+            <a href="/admin"><i class="fa-solid fa-square-plus fa-2xl"></i></a> Añadir un producto
+        </div>
 
       </main>
 

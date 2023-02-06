@@ -127,6 +127,7 @@
 
 main{
     background-color: #f5cf8e;
+    padding: 20px;
 }
 
 .listproducts{
@@ -145,7 +146,14 @@ main{
     margin : 10px;
 }
 
+.add{
+    text-align: center;
+}
 
+i{
+    color: #af762f;
+    margin-right: 5px;
+}
 
 
 
