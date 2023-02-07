@@ -69,7 +69,15 @@
             <li>MasterCard</li>
           </ul>
           <br />
+
           <button>Añadir al Carrito</button>
+
+          <a href="/products/<%=data.id%>/edit"><button>Editar producto</button></a>
+
+          <form action="/products/<%=data.id%>?_method=DELETE" method = "POST">
+            <input type="submit" value="Eliminar producto">
+          </form>
+
         </div>
       </div>
 

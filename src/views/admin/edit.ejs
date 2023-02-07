@@ -29,13 +29,13 @@
         </div>
 
 
-        <form action="/create" method = "post">
+        <form action="/products/create" method = "post">
             <div class="content">
                 <label for="producto">Nombre Producto</label>
-                <input type="text" name="producto" id="producto" class="input" placeholder="Ej: Bizcocho húmedo" required>
+                <input type="text" name="producto" id="producto" class="input" value="<%=producto.name%>" required>
         
                 <label for="descripcion">Descripción Producto</label>
-                <input type="text" name="descripcion" id="descripcion" class="input" placeholder="Bizcocho bañado..." required>  
+                <input type="text" name="descripcion" id="descripcion" class="input" value="<%=producto.description%>" required>  
                 
                 <div class="container-file">
                     <input type="file" name="file" id="file" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" multiple />
@@ -46,10 +46,10 @@
                 </div>
         
                 <label for="price">Precio</label>
-                <input type="number" name = "price" id = "price" class="input" required>
+                <input type="number" name = "price" id = "price" class="input" value="<%=producto.price%>" required>
         
                 <label for="category">Categoría</label>
-                <select name="category" id="category" class="select" required>
+                <select name="category" id="category" class="select" value="<%=producto.category%>" required>
                     <option value="Escoger">Escoger categoría</option>
                     <option value="Ponqués">Ponqués</option>
                     <option value="Galletas">Galletas</option>
@@ -58,7 +58,9 @@
                 </select>
         
                 <div class = "button_container">
-                    <input type="submit" value="Añadir" class = "añadir"> 
+                    <button class = "añadir"> Añadir
+                        <a href="#"></a>
+                    </button>
                 </div>
             </div>
 
