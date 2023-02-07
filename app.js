@@ -5,7 +5,7 @@ const login = require('./src/routers/login');
 const product = require('./src/routers/product-detail')
 const register = require('./src/routers/register');
 const cart = require('./src/routers/shoppingcart');
-const admin = require('./src/routers/admin');
+const create = require('./src/routers/create');
 const products = require('./src/routers/products');
 
 
@@ -23,7 +23,7 @@ app.use(login);
 app.use(product);
 app.use(register);
 app.use(cart);
-app.use(admin);
+app.use(create);
 app.use(products);
 
 app.listen(PORT, () => {
