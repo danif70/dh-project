@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
-<body>
-
-
-    <header>
-    </header>
+  <body>
+    <header></header>
 
     <main>
-
-        <div class="entradas">
-            <div class="imagenes">
-                <img src="images/logo.svg" alt="Logo" class = "logo"/>
-                <div class="animation">
-                    <img src="images/cicle-baked-bread.svg" alt="" srcset="" class="anim">
-                </div>
-            </div>
-
-            <div class="datos">
-
-                <h2 class = "marca">Digital Cake</h2>
-
-                <form action="/login" method="post">
-                  
-                  <label for="nombre"></label>
-                  <div class = "input">Usuario</div>
-                  <input type="text" name="nombre" id="nombre" required>
-          
-                  <label for="contraseña"></label>
-                  <div class = "input">Contraseña</div>
-                  <input type="password" name="contraseña" id="contraseña" required>
-
-                  <h5>¿Olvidó su contrseña?</h5>
-
-                  <div class = "button_container">
-                    <button class = "registrarse"> Ingresar
-                        <a href="#"></a>
-                    </button>
-                  </div>
-
-
-
-                </form>
-
-
-            </div>
-
-
+      <div class="entradas">
+        <div class="imagenes">
+          <img src="images/logo.svg" alt="Logo" class="logo" />
+          <div class="animation">
+            <img
+              src="images/cicle-baked-bread.svg"
+              alt=""
+              srcset=""
+              class="anim"
+            />
+          </div>
         </div>
 
+        <div class="datos">
+          <h2 class="marca">Digital Cake</h2>
 
+          <form action="/login" method="post">
+            <label for="nombre"></label>
+            <div class="input">Usuario</div>
+            <input type="text" name="nombre" id="nombre" required />
 
+            <label for="contraseña"></label>
+            <div class="input">Contraseña</div>
+            <input type="password" name="contraseña" id="contraseña" required />
 
+            <h5>¿Olvidó su contrseña?</h5>
+
+            <div class="button_container">
+              <button class="registrarse">
+                Ingresar
+                <a href="#"></a>
+              </button>
+            </div>
+          </form>
+          <h5>¿No tienes una cuenta?</h5>
+          <div class="button_container">
+            <a href="/register">
+              <button class="registrarse">Regístrate</button>
+            </a>
+          </div>
+        </div>
+      </div>
     </main>
 
-
     <%- include('../partials/footer') %>
-    
-</body>
+  </body>
 </html>
