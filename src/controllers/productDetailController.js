@@ -1,6 +1,7 @@
 
 const path = require('path');
-const database = require(path.join(__dirname, '../database/products.json'));
+const fs = require('fs');
+const database = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/products.json')));
 
 
 const detailController = {
