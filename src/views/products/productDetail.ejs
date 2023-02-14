@@ -4,26 +4,7 @@
 <%- include('../partials/head') %>
 <body>
   <header>
-    <nav>
-      <div class="logo">
-        <img src="images/logo.svg" alt="Logo" />
-      </div>
-      <div class="titles">
-        <p class="sub-title">Breads</p>
-        <p class="main-title">Digital Cake</p>
-        <p class="sub-title">Cookies</p>
-      </div>
-      <div class="user-icons">
-        <div class="log-in">
-          <i class="fa-solid fa-right-to-bracket"></i>
-          <span>Log In</span>
-        </div>
-        <div class="shopping-cart">
-          <i class="fa-solid fa-basket-shopping"></i>
-          <span>0</span>
-        </div>
-      </div>
-    </nav>
+    <%- include('../partials/navbar') %>
   </header>
   <main>
     <div class="main-container">
@@ -35,29 +16,31 @@
       <div class="product-images">
         <div class="images-list">
           <div class="image-thumbnail">
-            <img src="images/products/thumbnail_1.jpg" alt="Thumbnail 1" />
+            <img src="<%=data.image%>" alt="Thumbnail 1" />
           </div>
           <div class="image-thumbnail">
-            <img src="images/products/thumbnail_2.jpg" alt="Thumbnail 2" />
+            <img src="<%=data.image%>" alt="Thumbnail 2" />
           </div>
           <div class="image-thumbnail">
-            <img src="images/products/thumbnail_3.jpg" alt="Thumbnail 3" />
+            <img src="<%=data.image%>" alt="Thumbnail 3" />
           </div>
         </div>
         <div class="image-preview">
-          <img src="images/products/thumbnail_1.jpg" alt="Preview 1" />
+          <img src="<%=data.image%>" alt="Preview 1" />
         </div>
         <div class="product-info">
-          <h2>Amazing Cake</h2>
+          <h2><%=data.name%></h2>
           <br />
-          <p><strong>Precio:</strong> 50 USD</p>
+          <p><strong>Precio:</strong><%=data.price%></p>
           <br />
-          <p><strong>Promo:</strong> 4 pagos de 10 dólares con Visa</p>
+        
+          <% let Cuota = parseFloat(data.price)/4; %>
+
+          <p><strong>Promo:</strong> 4 pagos de <%= Cuota %> dólares con Visa</p>
           <br />
           <h4>Descripcion</h4>
           <p>
-            Torta de 4 pisos especial para eventos o para sorprender a tus
-            seres queridos.
+            <%=data.description%>
           </p>
           <br />
           <h5>Medios de pago:</h5>
@@ -67,7 +50,15 @@
             <li>MasterCard</li>
           </ul>
           <br />
+
           <button>Añadir al Carrito</button>
+
+          <a href="/products/<%=data.id%>/edit"><button>Editar producto</button></a>
+
+          <form action="/products/<%=data.id%>?_method=DELETE" method = "POST">
+            <input type="submit" value="Eliminar producto">
+          </form>
+
         </div>
       </div>
 

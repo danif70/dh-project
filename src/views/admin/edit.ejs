@@ -4,7 +4,7 @@
 <body>
 
     <header>
-        <a href="/"><img src="images/logo.svg" alt="Logo" id="logo" /></a>
+        <a href="/"><img src="/images/logo.svg" alt="Logo" id="logo" /></a>
         <div class="titles">
           <h3 class="sub-title">Breads</h3>
           <h1 class="main-title">Digital Cake</h1>
@@ -29,13 +29,13 @@
         </div>
 
 
-        <form action="/admin" method = "post">
+        <form action="/products/create" method = "post">
             <div class="content">
                 <label for="producto">Nombre Producto</label>
-                <input type="text" name="producto" id="producto" class="input" placeholder="Ej: Bizcocho húmedo" required>
+                <input type="text" name="producto" id="producto" class="input" value="<%=producto.name%>" required>
         
                 <label for="descripcion">Descripción Producto</label>
-                <input type="text" name="descripcion" id="descripcion" class="input" placeholder="Bizcocho bañado..." required>  
+                <input type="text" name="descripcion" id="descripcion" class="input" value="<%=producto.description%>" required>  
                 
                 <div class="container-file">
                     <input type="file" name="file" id="file" class="inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" multiple />
@@ -46,15 +46,15 @@
                 </div>
         
                 <label for="price">Precio</label>
-                <input type="number" name = "price" id = "price" class="input" required>
+                <input type="number" name = "price" id = "price" class="input" value="<%=producto.price%>" required>
         
                 <label for="category">Categoría</label>
-                <select name="category" id="category" class="select" required>
+                <select name="category" id="category" class="select" value="<%=producto.category%>" required>
                     <option value="Escoger">Escoger categoría</option>
-                    <option value="Argentina">Ponqués</option>
-                    <option value="Bolivia">Galletas</option>
-                    <option value="Brasil">Budines</option>
-                    <option value="Chile">Postres</option>
+                    <option value="Ponqués">Ponqués</option>
+                    <option value="Galletas">Galletas</option>
+                    <option value="Budines">Budines</option>
+                    <option value="Postres">Postres</option>
                 </select>
         
                 <div class = "button_container">

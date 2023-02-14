@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body>
+    
+    <header>
+        <nav>
+          <div class="logo">
+            <img src="images/logo.svg" alt="Logo" />
+          </div>
+          <div class="titles">
+            <p class="sub-title">Breads</p>
+            <p class="main-title">Digital Cake</p>
+            <p class="sub-title">Cookies</p>
+          </div>
+          <div class="user-icons">
+            <div class="log-in">
+              <a href="/login"><i class="fa-solid fa-right-to-bracket"></i></a>
+              <span>Log In</span>
+            </div>
+            <div class="shopping-cart">
+              <a href="/cart"><i class="fa-solid fa-basket-shopping"></i></a>
+              <span>0</span>
+            </div>
+          </div>
+        </nav>
+
+      </header>
+
+      <main>
+
+        <div class = "listproducts">
+
+            <% for (let i = 0; i< productsarray.length; i++){ %>
+
+                <div class = "section">
+                    <a href="/products/<%= productsarray[i].id %>"><img src="<%= productsarray[i].image %>" class="images"></a>
+                    <br>
+                    <h3><%= productsarray[i].name %></h3>
+                </div>
+
+            <% } %>
+
+        </div>
+
+        <div class = "add">
+            <a href="/create"><i class="fa-solid fa-square-plus fa-2xl"></i></a> Añadir un producto
+        </div>
+
+      </main>
+
+
+
+<%- include('../partials/footer') %>
+</body>
+
+</html>
