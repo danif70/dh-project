@@ -8,7 +8,6 @@ const register = require('./src/routers/register');
 const cart = require('./src/routers/shoppingcart');
 const products = require('./src/routers/products');
 
-
 const app = express();
 const PORT = process.env.PORT || 8000;
 
