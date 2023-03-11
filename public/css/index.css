@@ -146,6 +146,11 @@ nav .titles {
   object-fit: fill;
 }
 
+i {
+  color: #af762f;
+  margin-right: 5px;
+}
+
 footer {
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   background-color: #dfd9dd;
