@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+a{
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -49,6 +55,9 @@ nav .titles {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 10px;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+  text-decoration: none;
 }
 
 .user-icons div {
@@ -58,6 +67,8 @@ nav .titles {
 .user-icons i {
   font-size: 1.5rem;
   padding: 0 0.5rem;
+  color: #af762f;
+  margin-right: 5px;
 }
 
 .hero-image {
@@ -135,6 +146,11 @@ nav .titles {
   object-fit: fill;
 }
 
+i {
+  color: #af762f;
+  margin-right: 5px;
+}
+
 footer {
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
   background-color: #dfd9dd;
@@ -173,7 +189,6 @@ footer {
   }
 
   .log-in span {
-    font-family: 'Cabin', Helvetica, Arial, sans-serif;
     display: none;
   }
 }

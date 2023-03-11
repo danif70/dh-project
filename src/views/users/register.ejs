@@ -3,11 +3,9 @@
   <%- include('../partials/head') %>
   <body>
     <header>
-      <div classs="help">
-        <i class="fa-solid fa-question" id="question">
-          <a href="/"></a>
-        </i>
-      </div>
+      <header>
+        <%- include('../partials/navbar') %>
+      </header>
     </header>
 
     <main>
@@ -22,7 +20,8 @@
         </section>
       </div>
 
-      <form action="/register" method="post">
+      <form action="/register" method="post" 
+      enctype="multipart/form-data">
         <label for="nombre"></label>
         <div class="input">Nombre</div>
         <input type="text" name="nombre" id="nombre" required />
