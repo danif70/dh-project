@@ -3,10 +3,9 @@ const path = require('path');
 const methodOverride = require('method-override');
 
 const index = require('./src/routers/index');
-const login = require('./src/routers/login');
-const register = require('./src/routers/register');
 const cart = require('./src/routers/shoppingcart');
 const products = require('./src/routers/products');
+const users = require('./src/routers/users');
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -18,8 +17,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 app.use(index);
-app.use(login);
-app.use(register);
+app.use(users);
 app.use(cart);
 app.use(products);
 
