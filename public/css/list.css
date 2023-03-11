@@ -136,6 +136,7 @@ main {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
 }
 
 .listproducts > * {
@@ -149,6 +150,7 @@ main {
 
 .add {
   text-align: center;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
 }
 
 i {

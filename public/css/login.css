@@ -124,14 +124,12 @@ main {
 
 .logo {
   width: 80%;
-  border: solid #af762f 1px;
   margin: 10px;
 }
 
 @media (min-width: 240px) {
   .logo {
     width: 200px;
-    border: solid #af762f 1px;
     margin: 10px;
   }
 }
