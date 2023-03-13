@@ -132,14 +132,14 @@ main {
   padding: 20px;
 }
 
-.listproducts {
+.products-list-container {
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   font-family: 'Cabin', Helvetica, Arial, sans-serif;
 }
 
-.listproducts > * {
+.products-list-container > * {
   flex: 30%;
 }
 
