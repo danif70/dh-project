@@ -1,43 +1,42 @@
 [
-    {
-        "id" : 1,
-        "name":"Guillermo",
-        "last_name":"Moreno",
-        "email":"g.moreno@test.com",
-        "password":"g123",
-        "img": null
-    },
-    {
-        "id" : 2,
-        "name":"María",
-        "last_name":"Ruiz",
-        "email":"m.ruiz@test.com",
-        "password":"m123",
-        "img": null
-    },
-    {
-        "id" : 3,
-        "name":"Gloria",
-        "last_name":"Perez",
-        "email":"g.perez@test.com",
-        "password":"gp123",
-        "img": null
-    },
-    {
-        "id" : 4,
-        "name":"Juan",
-        "last_name":"Castillo",
-        "email":"j.castillo@test.com",
-        "password":"j123",
-        "img": null
-    },
-    {
-        "id" : 5,
-        "name":"Enrique",
-        "last_name":"Rosales",
-        "email":"e.rosales@test.com",
-        "password":"e123",
-        "img": null
-    }
-
+  {
+    "id": 1,
+    "name": "Guillermo",
+    "lastName": "Moreno",
+    "email": "g.moreno@test.com",
+    "password": "gm123",
+    "img": null
+  },
+  {
+    "id": 2,
+    "name": "María",
+    "lastName": "Ruiz",
+    "email": "m.ruiz@test.com",
+    "password": "mr123",
+    "img": null
+  },
+  {
+    "id": 3,
+    "name": "Gloria",
+    "lastName": "Perez",
+    "email": "g.perez@test.com",
+    "password": "gp123",
+    "img": null
+  },
+  {
+    "id": 4,
+    "name": "Juan",
+    "lastName": "Castillo",
+    "email": "j.castillo@test.com",
+    "password": "jc123",
+    "img": null
+  },
+  {
+    "id": 5,
+    "name": "Enrique",
+    "lastName": "Rosales",
+    "email": "e.rosales@test.com",
+    "password": "e123",
+    "img": null
+  }
 ]
