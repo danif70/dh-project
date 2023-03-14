@@ -4,7 +4,7 @@ const database = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/pr
 
 let products = {
   list: (req, res) => {
-    if (!req.session.isAuthenticated) return res.redirect('/login');
+    //if (!req.session.isAuthenticated) return res.redirect('/login');
     res.render(path.join(__dirname, '../views/products/productsList.ejs'), {
       styles: ['list'],
       title: ['Lista de productos'],
@@ -39,7 +39,7 @@ let products = {
   },
 
   detail: (req, res) => {
-    if (!req.session.isAuthenticated) return res.redirect('/login');
+    //if (!req.session.isAuthenticated) return res.redirect('/login');
     res.render(path.join(__dirname, '../views/products/productDetail.ejs'), {
       id: req.params.id,
       styles: ['productDetail'],
