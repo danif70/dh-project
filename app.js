@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 const index = require('./src/routers/index');
 const cart = require('./src/routers/shoppingcart');
@@ -20,7 +21,7 @@ app.use(index);
 app.use(users);
 app.use(cart);
 app.use(products);
-
+app.use(session({secret: 'secreto'}))
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
