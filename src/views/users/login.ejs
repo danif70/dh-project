@@ -2,20 +2,13 @@
 <html lang="en">
   <%- include('../partials/head') %>
   <body>
-    <header>
-      <%- include('../partials/navbar') %>
-    </header>
+    <header><%- include('../partials/navbar') %></header>
     <main>
       <div class="entradas">
         <div class="imagenes">
           <img src="images/logo.svg" alt="Logo" class="logo" />
           <div class="animation">
-            <img
-              src="images/cicle-baked-bread.svg"
-              alt=""
-              srcset=""
-              class="anim"
-            />
+            <img src="images/cicle-baked-bread.svg" alt="" srcset="" class="anim" />
           </div>
         </div>
 
@@ -23,15 +16,20 @@
           <h2 class="marca">Digital Cake</h2>
 
           <form action="/login" method="post">
-            <label for="nombre"></label>
+            <label for="email"></label>
             <div class="input">Usuario</div>
-            <input type="text" name="nombre" id="nombre" required />
+            <input type="text" name="email" id="email" placeholder="Email" required />
 
-            <label for="contraseña"></label>
+            <label for="password"></label>
             <div class="input">Contraseña</div>
-            <input type="password" name="contraseña" id="contraseña" required />
+            <input type="password" name="password" id="password" required />
 
-            <h5>¿Olvidó su contrseña?</h5>
+            <!-- Render error message-->
+            <% if (error) { %>
+            <div class="error">
+              <p><%= error %></p>
+            </div>
+            <% } %>
 
             <div class="button_container">
               <button class="registrarse">
@@ -40,6 +38,8 @@
               </button>
             </div>
           </form>
+          <h5>¿Olvidó su contraseña?</h5>
+          <br />
           <h5>¿No tienes una cuenta?</h5>
           <div class="button_container">
             <a href="/register">

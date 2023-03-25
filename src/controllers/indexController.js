@@ -1,12 +1,11 @@
-
-const path = require('path');
-
 const indexController = {
-    index:  (req, res) => {res.render(path.join(__dirname, '../views/index.ejs'), {'styles':["index"], 'title':['Digital Cake']} );}
-}
+  index: (req, res) => {
+    res.render('index', {
+      styles: ['index'],
+      title: ['Digital Cake'],
+      isAuthenticated: req.session.isAuthenticated,
+    });
+  },
+};
 
 module.exports = indexController;
-
-
-
-

@@ -1,34 +1,79 @@
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 const { validationResult } = require('express-validator');
 
-let users = {
-    login: (req, res) => { res.render(path.join(__dirname, '../views/users/login.ejs'), { 'styles': ["login"], 'title': ['Login'] }); },
-    register: (req, res) => { res.render(path.join(__dirname, '../views/users/register.ejs'), { 'styles': ["register"], 'title': ['Registro'] }); },
-    registerUser: (req, res) => {
-        const errors = validationResult(req);
-       
-        if (!errors.isEmpty()) {
-            console.log('fallé')
-            return res.render(path.join(__dirname, '../views/users/register.ejs'), { 'styles': ["register"], 'title': ['Registro'], errors: errors.mapped(), values: req.body });
+const usersDb = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8'),
+);
 
-        }
-        const dataBase = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json')))
 
-        const obj = {
-            id: dataBase.length + 1,
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            document: req.body.document,
-            email: req.body.email,
-            password: req.body.password
+const usersController = {
+  getLogin: (req, res) => {
+    // Estoy redirigiendo a la home si el usuario ya está logueado, pero
+    // luego podemos redirigir al perfil del usuario si es necesario
+    if (req.session.isAuthenticated) return res.redirect('/');
+    res.render('users/login', {
+      styles: ['login'],
+      title: ['Iniciar sesión'],
+      isAuthenticated: false,
+      error: null,
+    });
+  },
+  postLogin: (req, res) => {
+    const { email, password } = req.body;
 
-        };
-        dataBase.push(obj)
-        fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(dataBase));
-        res.redirect('/');
+    const user = usersDb.find((user) => user.email === email);
 
+    if (!user || user.password !== password) {
+      return res.render('users/login', {
+        styles: ['login'],
+        title: ['Iniciar sesión'],
+        isAuthenticated: false,
+        error: 'Usuario o contraseña incorrectos',
+      });
     }
+
+    req.session.isAuthenticated = true;
+    res.redirect('/');
+  },
+
+  getLogout: (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
+  },
+  
+  register: (req, res) => {
+    res.render('users/register', {
+      styles: ['register'],
+      title: ['Registrarse'],
+      isAuthenticated: false,
+    });
+  },
+
+  registerUser: (req, res) => {
+      const errors = validationResult(req);
+      
+      if (!errors.isEmpty()) {
+          console.log('fallé')
+          return res.render(path.join(__dirname, '../views/users/register.ejs'), { 'styles': ["register"], 'title': ['Registro'], errors: errors.mapped(), values: req.body, isAuthenticated: false });
+      }
+      const dataBase = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json')))
+
+      const obj = {
+          id: dataBase.length + 1,
+          nombre: req.body.nombre,
+          apellido: req.body.apellido,
+          document: req.body.document,
+          email: req.body.email,
+          password: req.body.password
+      };
+      dataBase.push(obj)
+      fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(dataBase));
+      req.session.isAuthenticated = true;
+      res.redirect('/');
+      
+
+  }
 };
 
-module.exports = users; 3
+module.exports = usersController;
