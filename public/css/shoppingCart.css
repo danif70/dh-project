@@ -11,48 +11,62 @@
   margin: 0;
   padding: 0;
 }
+/* Header --------------------------------------------------------------------*/
 
-header {
+.user-icons {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  background-color: #dfd9dd;
-  border-bottom: solid #bea28c 3px;
+  gap: 10px;
+  font-family: 'Cabin', Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.user-icons div {
+  margin: 0 0.5rem;
+}
+
+.user-icons i {
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+  color: #af762f;
+  margin-right: 5px;
+}
+
+.logo img {
+  width: 100px;
+  height: 80px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+
+h1 {
+  font-family: 'Lobster', Georgia, Times, serif;
+}
+
+ .titles {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   font-family: 'Lobster', Georgia, Times, serif;
-  height: auto;
-  justify-content: space-between;
-  padding: 20px;
-  text-align: right;
-  width: 100%;
-}
-
-#question {
-  background-color: white;
-  border-radius: 50%;
-  height: 25px;
-  padding: 5px 9px 5px 0px;
-  position: relative;
-  right: 20px;
-  top: 6px;
-  width: 28px;
-}
-
-#logo {
-  border: solid #af762f 1px;
-  border-radius: 50%;
-  width: 150px;
-}
-
-.titles {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
   gap: 45px;
   margin-left: -110px;
-}
+} 
 
 .sub-title {
-  font-size: 24px;
+  font-family: 'Lobster', Georgia, Times, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.9rem 0;
 }
 
 .main-title {
@@ -67,6 +81,7 @@ main {
   text-align: center;
 }
 
+/* Main --------------------------------------------------------------------*/
 .product {
   display: flex;
   gap: 70px;
