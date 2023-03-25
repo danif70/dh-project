@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 const usersDb = JSON.parse(
   fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8'),
 );
+
 
 const usersController = {
   getLogin: (req, res) => {
@@ -39,7 +41,7 @@ const usersController = {
     req.session.destroy();
     res.redirect('/');
   },
-
+  
   register: (req, res) => {
     res.render('users/register', {
       styles: ['register'],
@@ -47,6 +49,31 @@ const usersController = {
       isAuthenticated: false,
     });
   },
+
+  registerUser: (req, res) => {
+      const errors = validationResult(req);
+      
+      if (!errors.isEmpty()) {
+          console.log('fallé')
+          return res.render(path.join(__dirname, '../views/users/register.ejs'), { 'styles': ["register"], 'title': ['Registro'], errors: errors.mapped(), values: req.body, isAuthenticated: false });
+      }
+      const dataBase = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json')))
+
+      const obj = {
+          id: dataBase.length + 1,
+          nombre: req.body.nombre,
+          apellido: req.body.apellido,
+          document: req.body.document,
+          email: req.body.email,
+          password: req.body.password
+      };
+      dataBase.push(obj)
+      fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(dataBase));
+      req.session.isAuthenticated = true;
+      res.redirect('/');
+      
+
+  }
 };
 
 module.exports = usersController;
