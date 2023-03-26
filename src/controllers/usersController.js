@@ -15,10 +15,31 @@ const usersController = {
       styles: ['login'],
       title: ['Iniciar sesión'],
       isAuthenticated: false,
-      error: null,
+      loginError: null,
+      loginErrors: null,
     });
   },
   postLogin: (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      const mappedErrors = errors.mapped();
+      const loginErrors = Object.keys(mappedErrors).map((key) => {
+        return {
+          [key]: mappedErrors[key].msg,
+        };
+      });
+
+      console.log(loginErrors);
+
+      return res.render('users/login', {
+        styles: ['login'],
+        title: ['Iniciar sesión'],
+        isAuthenticated: false,
+        loginError: null,
+        loginErrors,
+      });
+    }
     const { email, password } = req.body;
 
     const user = usersDb.find((user) => user.email === email);
@@ -28,7 +49,8 @@ const usersController = {
         styles: ['login'],
         title: ['Iniciar sesión'],
         isAuthenticated: false,
-        error: 'Usuario o contraseña incorrectos',
+        loginError: 'Usuario o contraseña incorrectos',
+        loginErrors: [],
       });
     }
 
