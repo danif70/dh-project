@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 
 app.use(
   session({
-    secret: 'mamataalpanadarrapanta',
+    secret: 'secreto',
     resave: false,
     saveUninitialized: false,
   }),
