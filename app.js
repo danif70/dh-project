@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 
 app.use(
   session({
-    secret: 'mamataalpanadarrapanta',
+    secret: 'secreto',
     resave: false,
     saveUninitialized: false,
   }),
@@ -32,7 +32,7 @@ app.use(index);
 app.use(users);
 app.use(cart);
 app.use(products);
-app.use(session({secret: 'secreto'}))
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
