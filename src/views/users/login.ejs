@@ -18,16 +18,28 @@
           <form action="/login" method="post">
             <label for="email"></label>
             <div class="input">Usuario</div>
-            <input type="text" name="email" id="email" placeholder="Email" required />
+            <input type="text" name="email" id="email" placeholder="Email"  />
+
+            <% if (loginErrors[0]) { %>
+              <div class="error">
+                <p><%= loginErrors[0].email %></p>
+              </div>
+              <% } %>
 
             <label for="password"></label>
             <div class="input">Contraseña</div>
-            <input type="password" name="password" id="password" required />
+            <input type="password" name="password" id="password"  />
+
+            <% if (loginErrors[1]) { %>
+              <div class="error">
+                <p><%= loginErrors[1].password %></p>
+              </div>
+              <% } %>
 
             <!-- Render error message-->
-            <% if (error) { %>
+            <% if (loginError) { %>
             <div class="error">
-              <p><%= error %></p>
+              <p><%= loginError %></p>
             </div>
             <% } %>
 
