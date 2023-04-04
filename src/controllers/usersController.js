@@ -16,7 +16,7 @@ const usersController = {
       title: ['Iniciar sesión'],
       isAuthenticated: false,
       loginError: null,
-      loginErrors: null,
+      loginErrors: [],
     });
   },
   postLogin: (req, res) => {
