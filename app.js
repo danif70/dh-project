@@ -1,3 +1,6 @@
+
+require('dotenv').config()
+
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
@@ -9,6 +12,7 @@ const products = require('./src/routers/products');
 const users = require('./src/routers/users');
 
 const app = express();
+
 const PORT = process.env.PORT || 8000;
 
 app.set('view engine', 'ejs');
