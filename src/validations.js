@@ -11,4 +11,16 @@ const validations = [
     body('reppassword').notEmpty().withMessage('Debes repetir la contraseña'),
 ]
 
-module.exports = validations;
+const loginValidations = [
+  body('email')
+    .notEmpty()
+    .withMessage('Debes ingresar un email').bail()
+    .isEmail()
+    .withMessage('Debes ingresar un email válido'),
+  body('password').notEmpty().withMessage('Debes ingresar una contraseña'),
+];
+
+module.exports = {
+  validations,
+  loginValidations,
+};
