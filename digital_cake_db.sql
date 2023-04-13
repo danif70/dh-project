@@ -7,6 +7,13 @@
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
+
+-- -----------------------------------------------------
+-- Schema digital_cake_db
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `digital_cake_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;
+USE `digital_cake_db` ;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -141,7 +148,8 @@ ALTER TABLE `users`
 --
 -- Filtros para la tabla `products`
 --
-ALTER TABLE `products`
+
+/*ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id`),
   ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id`);
 
@@ -152,7 +160,32 @@ ALTER TABLE `shopping_cart`
   ADD CONSTRAINT `shopping_cart_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `shopping_cart_ibfk_2` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`);
 COMMIT;
-
+*/
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (1,'Limonada de menta','Limonada de menta',50.0,'product_1.jpg',1);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (2,'Pastel de cumpleaños','Pastel de cumpleaños',200.0,'product_2.jpg',2);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (3,'Cheesecake de mora','Cheesecake de mora',300.0,'product_3.jpg',2);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (4,'Torta de nuez','Torta de nuez',500.0,'product_4.jpg',2);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (5,'Maccaroons','Maccaroons',800.0,'product_5.jpg',3);
+
+INSERT INTO users(id, name, last_name, email, password, image) VALUES (1,'Guillermo','Moreno','g.moreno@test.com','g123','user_image.jpg');
+INSERT INTO users(id, name, last_name, email, password, image) VALUES (2,'María','Ruiz','m.ruiz@test.com','m123','user_image.jpg');
+INSERT INTO users(id, name, last_name, email, password, image) VALUES (3,'Gloria','Perez','g.perez@test.com','gp123','user_image.jpg');
+INSERT INTO users(id, name, last_name, email, password, image) VALUES (4,'Juan','Castillo','j.castillo@test.com','j123','user_image.jpg');
+INSERT INTO users(id, name, last_name, email, password, image) VALUES (5,'Enrique','Rosales','e.rosales@test.com','e123','user_image.jpg');
+
+INSERT INTO categories(id, name) VALUES (1,'Bebidas');
+INSERT INTO categories(id, name) VALUES (2,'Pasteles');
+INSERT INTO categories(id, name) VALUES (3,'Dulces');
+
+INSERT INTO shopping_cart(id, id_user, id_product) VALUES (1, 1, 5);
+INSERT INTO shopping_cart(id, id_user, id_product) VALUES (2, 2, 3);
+INSERT INTO shopping_cart(id, id_user, id_product) VALUES (3, 4, 4);
+
+
+
+
