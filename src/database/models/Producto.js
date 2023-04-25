@@ -1,3 +1,4 @@
+const CarritoCompra = require("./CarritoCompra");
 
 module.exports = (sequelize, dataTypes) => {
 
@@ -21,6 +22,9 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Producto = sequelize.define(alias, cols, config);
+
+    Producto.hasMany(CarritoCompra, { foreingKey: 'product_id' });
+    CarritoCompra.belongsToMany(Producto);
 
     return Producto;
 
