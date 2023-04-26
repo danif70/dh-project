@@ -1,17 +1,17 @@
-const CarritoCompra = require("./CarritoCompra");
+// const CarritoCompra = require("./CarritoCompra");
 
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
     let alias = "productos";
 
     let cols = {
-        
-        id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-        name: {type: DataTypes.TEXT},
-        description: {type: DataTypes.TEXT},
-        price: {type: DataTypes.FLOAT},
-        image: {type: DataTypes.TEXT},
-        category: {type: DataTypes.TEXT}, 
+
+        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+        name: { type: DataTypes.TEXT },
+        description: { type: DataTypes.TEXT },
+        price: { type: DataTypes.FLOAT },
+        image: { type: DataTypes.TEXT },
+        category: { type: DataTypes.TEXT },
     };
 
     let config = {
@@ -23,9 +23,10 @@ module.exports = (sequelize, dataTypes) => {
 
     const Producto = sequelize.define(alias, cols, config);
 
-    Producto.hasMany(CarritoCompra, { foreingKey: 'product_id' });
-    CarritoCompra.belongsToMany(Producto);
+   /*  Producto.associate = function (models) {
+        Producto.hasMany(models.carrito_compra, { foreingKey: 'product_id' });
+        CarritoCompra.belongsToMany(models.productos);
+    } */
 
     return Producto;
-
-}
+};

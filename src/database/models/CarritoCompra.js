@@ -1,19 +1,18 @@
 const Usuario = require('./Usuario');
 
-module.exports = (sequelize, dataTypes) => {
-  const CarritoCompra = sequelize.define(
-    'carrito_compras',
-    {
-      id: {
-        type: dataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-    },
-    {
-      timestamps: true,
-    },
-  );
+module.exports = (sequelize, DataTypes) => {
 
-  return Categoria;
+  let alias = "carrito_compras";
+
+  let cols = {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true}
+  };
+
+  let config = {
+    timestamps: true,
+    tableName: "carrito_compras"
+  };
+  const CarritoCompra = sequelize.define(alias, cols, config);
+
+  return CarritoCompra;
 };

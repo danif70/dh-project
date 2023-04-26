@@ -1,10 +1,14 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
 const { validationResult } = require('express-validator');
 
-const usersDb = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8'),
-);
+
+const usersDb = /* JSON.parse(
+  fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8'), 
+  
+)*/
+db.usuarios.findAll().then((listaDeUsuarios)=>console.log(listaDeUsuarios));
 
 const usersController = {
   getLogin: (req, res) => {
