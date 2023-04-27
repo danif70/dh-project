@@ -1,6 +1,8 @@
-// const CarritoCompra = require("./CarritoCompra");
+const CarritoCompra = require("./CarritoCompra");
 
 module.exports = (sequelize, DataTypes) => {
+
+    // Creación del modelo ------------------------------------------------------------
 
     let alias = "usuarios";
 
@@ -21,10 +23,11 @@ module.exports = (sequelize, DataTypes) => {
 
     const Usuario = sequelize.define(alias, cols, config);
 
-    /* Usuario.associate = function (models){
-        Usuario.hasOne(models.carrito_compra, { foreingKey: 'user_id' });
-        CarritoCompra.belongsTo(models.usuarios);
-    } */
+    // Relaciones --------------------------------------------------------------------
+
+    Usuario.associate = function (models){
+        Usuario.hasOne(models.carrito_compras, { as: 'carrito_compra', foreingKey: 'id_user' });
+    }
     
     return Usuario;
 };

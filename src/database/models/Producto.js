@@ -1,6 +1,9 @@
-// const CarritoCompra = require("./CarritoCompra");
+let CarritoCompra = require("./CarritoCompra");
+let Categoria = require("./Categoria");
 
 module.exports = (sequelize, DataTypes) => {
+
+    // Creación del modelo ------------------------------------------------------------
 
     let alias = "productos";
 
@@ -11,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         description: { type: DataTypes.TEXT },
         price: { type: DataTypes.FLOAT },
         image: { type: DataTypes.TEXT },
-        category: { type: DataTypes.TEXT },
+        id_category: { type: DataTypes.INTEGER },
     };
 
     let config = {
@@ -23,10 +26,12 @@ module.exports = (sequelize, DataTypes) => {
 
     const Producto = sequelize.define(alias, cols, config);
 
-   /*  Producto.associate = function (models) {
-        Producto.hasMany(models.carrito_compra, { foreingKey: 'product_id' });
-        CarritoCompra.belongsToMany(models.productos);
-    } */
+    // Relaciones --------------------------------------------------------------------
+
+    Producto.associate = function (models) {
+        Producto.belongsTo(models.carrito_compras, {as: 'carrito_compra', foreingKey: 'id_product' });
+        Producto.belongsTo(models.categorias, {as: 'categoria', foreingKey: 'id' });
+    } 
 
     return Producto;
 };

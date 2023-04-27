@@ -9,7 +9,7 @@ const usersDb = JSON.parse(
   
 )
 
-db.usuarios.findAll().then((listaDeUsuarios)=>console.log(listaDeUsuarios)).catch((err)=>console.log(err));
+//db.usuarios.findAll().then((listaDeUsuarios)=>console.log(listaDeUsuarios)).catch((err)=>console.log(err));
 
 
 

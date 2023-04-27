@@ -4,6 +4,8 @@ const { sequelize } = require('.');
 
 module.exports = (sequelize, DataTypes) => {
 
+  // Creación del modelo ------------------------------------------------------------
+
   let alias = "categorias";
 
   let cols = {
@@ -18,10 +20,11 @@ module.exports = (sequelize, DataTypes) => {
 
   const Categoria = sequelize.define(alias, cols, config);
 
-  /* Categoria.associate = function (models) {
-    Categoria.belongsTo(models.usuarios, { foreingKey: 'category_id' });
-    Usuario.hasOne(models.categorias);
-  }; */
+  // Relaciones --------------------------------------------------------------------
+
+  Categoria.associate = function (models) {
+    Categoria.hasMany(models.productos, {as: 'producto', foreingKey: 'id_category' });
+  }; 
 
   return Categoria;
 };
