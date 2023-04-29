@@ -130,7 +130,7 @@ nav .titles {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .product {
@@ -141,7 +141,7 @@ nav .titles {
 
 .product img {
   width: 100%;
-  height: 100%;
+  height: 14rem;
   padding-top: 2rem;
   object-fit: fill;
 }
@@ -217,4 +217,16 @@ a {
   100% {
     transform: rotate(359deg);
   }
+}
+
+
+.ver_products {
+  background-color: #f5cf8e;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  padding-top: 0rem;
 }

@@ -3,15 +3,11 @@ const path = require('path');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
 
-// Base de datos previa en json
-//const usersDb = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8'));
-
-// Base de datos con sequelize
-let usersDb;
-db.usuarios.findAll({raw: true}).then((listaDeUsuarios) => {usersDb = listaDeUsuarios}).catch((err)=>console.log(err));
 
 const usersController = {
+
   getLogin: (req, res) => {
+
     // Estoy redirigiendo a la home si el usuario ya está logueado, pero
     // luego podemos redirigir al perfil del usuario si es necesario
     if (req.session.isAuthenticated) return res.redirect('/');
@@ -23,7 +19,14 @@ const usersController = {
       loginErrors: [],
     });
   },
+
   postLogin: (req, res) => {
+
+    // Se cargan los usuarios
+    db.usuarios.findAll({raw: true}).then((listaDeUsuarios) => {
+      
+      usersDb = listaDeUsuarios
+
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -60,14 +63,18 @@ const usersController = {
 
     req.session.isAuthenticated = true;
     res.redirect('/');
+
+  }).catch((err)=>console.log(err));
   },
 
   getLogout: (req, res) => {
+
     req.session.destroy();
     res.redirect('/');
   },
 
   register: (req, res) => {
+
     res.render('users/register', {
       styles: ['register'],
       title: ['Registrarse'],
@@ -76,6 +83,7 @@ const usersController = {
   },
 
   registerUser: (req, res) => {
+    
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -88,20 +96,20 @@ const usersController = {
         isAuthenticated: false,
       });
     }
-    const dataBase = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json')));
 
-    const obj = {
-      id: dataBase.length + 1,
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      document: req.body.document,
-      email: req.body.email,
-      password: req.body.password,
-    };
-    dataBase.push(obj);
-    fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(dataBase));
-    req.session.isAuthenticated = true;
-    res.redirect('/');
+    // Creación de usuario con sequelize
+    db.usuarios.create(
+      {
+        name: req.body.nombre,
+        last_name: req.body.apellido,
+        email: req.body.email,
+        password: req.body.password,
+        image: 'user_image.jpg'
+      }
+    ).then( () => {
+        req.session.isAuthenticated = true;
+        res.redirect('/');
+      }).catch((err) => console.log(err));
   },
 };
 

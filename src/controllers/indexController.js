@@ -1,10 +1,19 @@
+const db = require('../database/models');
+
 const indexController = {
+
   index: (req, res) => {
-    res.render('index', {
-      styles: ['index'],
-      title: ['Digital Cake'],
-      isAuthenticated: req.session.isAuthenticated,
-    });
+
+    db.productos.findAll({raw: true, limit: 5 }).then((listaDeProductos) => {
+
+      res.render('index', 
+      {
+        styles: ['index'],
+        title: ['Digital Cake'],
+        isAuthenticated: req.session.isAuthenticated,
+        data: listaDeProductos
+      });
+    }).catch((err)=>console.log(err));
   },
 };
 
