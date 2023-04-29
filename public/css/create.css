@@ -253,6 +253,10 @@ img {
   }
 }
 
+.id_hidden{
+  display: none;
+}
+
 /* footer -------------------------------*/
 
 footer {

@@ -19,10 +19,10 @@ module.exports = (sequelize, DataTypes) => {
 
   // Relaciones --------------------------------------------------------------------
 
-  CarritoCompra.associate = function (models){
-    CarritoCompra.belongsTo(models.usuarios, { as: 'usuario', foreingKey: 'id' }); 
-    CarritoCompra.hasOne(models.productos, { as: 'producto', foreingKey: 'id' });
-}
+//   CarritoCompra.associate = function (models){
+//     CarritoCompra.belongsTo(models.usuarios, { as: 'usuario', foreingKey: 'id' }); 
+//     CarritoCompra.hasOne(models.productos, { as: 'producto', foreingKey: 'id' });
+// }
 
 
   return CarritoCompra;

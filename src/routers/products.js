@@ -17,6 +17,9 @@ router.get('/products/:id', productsController.detail);
 // GET edit product
 router.get('/products/:id/edit', productsController.edit);
 
+// PUT update product
+router.put('/products/:id/edit', productsController.update);
+
 // DELETE product
 router.delete('/products/:id', productsController.deleteProduct);
 

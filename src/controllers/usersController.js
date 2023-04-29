@@ -3,15 +3,12 @@ const path = require('path');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
 
+// Base de datos previa en json
+//const usersDb = JSON.parse(fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8'));
 
-const usersDb = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8'), 
-  
-)
-
-//db.usuarios.findAll().then((listaDeUsuarios)=>console.log(listaDeUsuarios)).catch((err)=>console.log(err));
-
-
+// Base de datos con sequelize
+let usersDb;
+db.usuarios.findAll({raw: true}).then((listaDeUsuarios) => {usersDb = listaDeUsuarios}).catch((err)=>console.log(err));
 
 const usersController = {
   getLogin: (req, res) => {

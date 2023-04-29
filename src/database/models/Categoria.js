@@ -22,9 +22,9 @@ module.exports = (sequelize, DataTypes) => {
 
   // Relaciones --------------------------------------------------------------------
 
-  Categoria.associate = function (models) {
-    Categoria.hasMany(models.productos, {as: 'producto', foreingKey: 'id_category' });
-  }; 
+  // Categoria.associate = function (models) {
+  //   Categoria.hasMany(models.productos, {as: 'producto', foreingKey: 'id_category' });
+  // }; 
 
   return Categoria;
 };
