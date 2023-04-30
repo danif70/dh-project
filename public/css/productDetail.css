@@ -43,8 +43,13 @@ nav .titles {
 }
 
 .logo img {
-  width: 100px;
+  width: 80px;
   height: 80px;
+}
+
+.logo a :hover {
+  border-radius: 50%;
+  border: 3px solid #af762f;
 }
 
 .titles p {
@@ -119,16 +124,34 @@ main {
 
 .image-thumbnail img {
   width: 100px;
-  height: 100px;
+  height: 80px;
+  border-radius: 20px;
+  box-shadow:
+  inset 0 -3em 3em rgba(0,0,0,0.1),
+        0 0  0 2px rgb(255,255,255),
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
+  
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .image-preview {
   margin: 5px;
+  padding: 20px;
+}
+
+.image_preview{
+  border-radius: 20px;
+  box-shadow:
+  inset 0 -3em 3em rgba(0,0,0,0.1),
+        0 0  0 2px rgb(255,255,255),
+        0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 
 .image-preview img {
-  width: 300px;
-  height: 300px;
+  width: 330px;
+  height: 250px;
 }
 
 .product-info {

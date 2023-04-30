@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
@@ -62,7 +61,7 @@ const usersController = {
     }
 
     req.session.isAuthenticated = true;
-    res.redirect('/');
+    res.redirect('/?name='+user.name);
 
   }).catch((err)=>console.log(err));
   },
@@ -87,7 +86,6 @@ const usersController = {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      console.log('fallé');
       return res.render(path.join(__dirname, '../views/users/register.ejs'), {
         styles: ['register'],
         title: ['Registro'],
@@ -104,7 +102,7 @@ const usersController = {
         last_name: req.body.apellido,
         email: req.body.email,
         password: req.body.password,
-        image: 'user_image.jpg'
+        image: 'user_image.jpg'            // Falta subir imágen personalizada        
       }
     ).then( () => {
         req.session.isAuthenticated = true;
