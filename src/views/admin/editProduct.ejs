@@ -16,7 +16,7 @@
             </section>
         </div>
 
-        <form action="/products/<%=product.id%>/edit?_method=PUT" method="POST">
+        <form action="/products/<%=product.id%>/edit?_method=PUT" method="POST"  enctype="multipart/form-data">
             <div class="content">
                 <label for="product">Nombre Producto</label>
                 <input type="text" name="product" id="product" class="input" value="<%=product.name%>" required>
@@ -27,7 +27,7 @@
                 <input type="text" name="descripcion" id="descripcion" class="input"
                     value="<%=product.description%>" required>
 
-                <div class="container-file">
+                <div class="container-file" >
                     <input type="file" name="file" id="file" class="inputfile inputfile-1"
                         data-multiple-caption="{count} archivos seleccionados" multiple />
                     <label for="file">

@@ -15,7 +15,7 @@ let MulterDiskStorage = multer.diskStorage({
 
     filename: (req, file, callback) =>
     {
-        let imageName = Date.now();
+        let imageName = String(Date.now()+path.extname(file.originalname));
         callback(null, imageName);
     }
 
@@ -39,7 +39,7 @@ router.get('/products/:id', productsController.detail);
 router.get('/products/:id/edit', productsController.edit);
 
 // PUT update product
-router.put('/products/:id/edit', productsController.update);
+router.put('/products/:id/edit', fileUpload.single('file'), productsController.update);
 
 // DELETE product
 router.delete('/products/:id', productsController.deleteProduct);

@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   let alias = "carrito_compras";
 
   let cols = {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true}
+    id_user: {type: DataTypes.INTEGER},
+    id_product:{type: DataTypes.INTEGER}
   };
 
   let config = {
@@ -19,11 +20,10 @@ module.exports = (sequelize, DataTypes) => {
 
   // Relaciones --------------------------------------------------------------------
 
-//   CarritoCompra.associate = function (models){
-//     CarritoCompra.belongsTo(models.usuarios, { as: 'usuario', foreingKey: 'id' }); 
-//     CarritoCompra.hasOne(models.productos, { as: 'producto', foreingKey: 'id' });
-// }
-
+  CarritoCompra.associate = function (models){
+    CarritoCompra.belongsTo(models.usuarios, { as: 'usuario', foreignKey: 'id' }); 
+    // CarritoCompra.hasMany(models.productos, { as: 'producto', foreignKey: 'id' });
+}
 
   return CarritoCompra;
 };

@@ -34,13 +34,15 @@ let products = {
   create: (req, res) => {
     if (!req.session.isAuthenticated) return res.redirect('/login');
 
+    let ima = req.file? req.file.filename:'product_7.jpg';
+
     // Creación de producto con sequelize
     db.productos.create(
       {
         name: req.body.product,
         description: req.body.descripcion,
         price: parseFloat(req.body.price),
-        image: 'product_7.jpg',                      // Falta implementar la actualización de imágen
+        image: ima,                      // Falta implementar la actualización de imágen
         id_category: parseInt(req.body.category),
       }).then( () => {res.redirect('/products');}).catch((err) => console.log(err));
 
@@ -83,10 +85,13 @@ let products = {
 
     if (!req.session.isAuthenticated) return res.redirect('/login');
 
+    let ima = req.file? req.file.filename:'product_7.jpg';
+
     // Se actualiza el producto escogido
     db.productos.update({
         name: req.body.product,
         description: req.body.descripcion,
+        image: ima,
         price: parseFloat(req.body.price),                     // Pendiente cómo actualizar la imágen
         id_category: parseInt(req.body.category),
     },

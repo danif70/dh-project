@@ -25,9 +25,9 @@ module.exports = (sequelize, DataTypes) => {
 
     // Relaciones --------------------------------------------------------------------
 
-    // Usuario.associate = function (models){
-    //     Usuario.hasOne(models.carrito_compras, { as: 'carrito_compra', foreingKey: 'id_user' });
-    // }
+    Usuario.associate = function (models){
+        Usuario.hasOne(models.carrito_compras, { as: 'carrito_compra', foreignKey: 'id_user' });
+    }
     
     return Usuario;
 };

@@ -28,10 +28,10 @@ module.exports = (sequelize, DataTypes) => {
 
     // Relaciones --------------------------------------------------------------------
 
-    // Producto.associate = function (models) {
-    //     Producto.belongsTo(models.carrito_compras, {as: 'carrito_compra', foreingKey: 'id_product' });
-    //     Producto.belongsTo(models.categorias, {as: 'categoria', foreingKey: 'id' });
-    // } 
+    Producto.associate = function (models) {
+        // Producto.belongsToMany(models.carrito_compras, {as: 'carrito_compra', foreignKey: 'id_product' });
+        Producto.belongsTo(models.categorias, {as: 'categoria', foreignKey: 'id' });
+    } 
 
     return Producto;
 };
