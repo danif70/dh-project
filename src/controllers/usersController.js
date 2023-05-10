@@ -10,6 +10,7 @@ const usersController = {
     // Estoy redirigiendo a la home si el usuario ya está logueado, pero
     // luego podemos redirigir al perfil del usuario si es necesario
     if (req.session.isAuthenticated) return res.redirect('/');
+
     res.render('users/login', {
       styles: ['login'],
       title: ['Iniciar sesión'],
@@ -61,9 +62,23 @@ const usersController = {
     }
 
     req.session.isAuthenticated = true;
-    res.redirect('/?name='+user.name);
+    req.session.userInfo = user;
 
-  }).catch((err)=>console.log(err));
+    db.productos.findAll({raw: true, limit: 5 }).then((listaDeProductos) => {
+
+      res.render('index', 
+        {
+          styles: ['index'],
+          title: ['Digital Cake'],
+          isAuthenticated: req.session.isAuthenticated,
+          data: listaDeProductos,
+          userinfo : req.session.userInfo
+        });
+
+      }).catch((err)=>console.log(err));
+
+    
+    }).catch((err)=>console.log(err));
   },
 
   getLogout: (req, res) => {
@@ -95,19 +110,34 @@ const usersController = {
       });
     }
 
+    let user = {
+      name: req.body.nombre,
+      last_name: req.body.apellido,
+      email: req.body.email,
+      password: req.body.password,
+      image: 'user_image.jpg'                   
+    }
+
     // Creación de usuario con sequelize
-    db.usuarios.create(
-      {
-        name: req.body.nombre,
-        last_name: req.body.apellido,
-        email: req.body.email,
-        password: req.body.password,
-        image: 'user_image.jpg'            // Falta subir imágen personalizada        
-      }
-    ).then( () => {
+    db.usuarios.create(user).then( () => {
+
         req.session.isAuthenticated = true;
-        res.redirect('/');
+        req.session.userInfo = user;
+
+        db.productos.findAll({raw: true, limit: 5 }).then((listaDeProductos) => {
+
+          res.render('index', 
+          {
+            styles: ['index'],
+            title: ['Digital Cake'],
+            isAuthenticated: req.session.isAuthenticated,
+            data: listaDeProductos,
+            userinfo : req.session.userInfo
+          });
+          
+        }).catch((err)=>console.log(err));     
       }).catch((err) => console.log(err));
+
   },
 };
 

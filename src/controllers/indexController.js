@@ -11,7 +11,8 @@ const indexController = {
         styles: ['index'],
         title: ['Digital Cake'],
         isAuthenticated: req.session.isAuthenticated,
-        data: listaDeProductos
+        data: listaDeProductos,
+        userinfo : req.session.userInfo
       });
     }).catch((err)=>console.log(err));
   },

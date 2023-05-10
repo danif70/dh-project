@@ -13,6 +13,7 @@ let products = {
         title: ['Lista de productos'],
         products: listaDeProductos,
         isAuthenticated: req.session.isAuthenticated,
+        userinfo : req.session.userInfo
       });    
     }).catch((err)=>console.log(err));
 
@@ -26,7 +27,7 @@ let products = {
       styles: ['create'],
       title: ['Crear producto'],
       isAuthenticated: req.session.isAuthenticated,
-
+      userinfo : req.session.userInfo
     });
 
   },
@@ -60,6 +61,7 @@ let products = {
         title: ['Detalle del producto'],
         data: productRequested,      
         isAuthenticated: req.session.isAuthenticated,
+        userinfo : req.session.userInfo
       });
     }).catch((err)=>console.log(err));
 
@@ -77,6 +79,7 @@ let products = {
         title: ['Editar producto'],
         product: productToEdit,
         isAuthenticated: req.session.isAuthenticated,
+        userinfo : req.session.userInfo
       });
     }).catch((err)=>console.log(err));
   },
@@ -85,14 +88,14 @@ let products = {
 
     if (!req.session.isAuthenticated) return res.redirect('/login');
 
-    let ima = req.file? req.file.filename:'product_7.jpg';
+    let ima = req.file? req.file.filename:'product_'+req.body.id+'.jpg';
 
     // Se actualiza el producto escogido
     db.productos.update({
         name: req.body.product,
         description: req.body.descripcion,
         image: ima,
-        price: parseFloat(req.body.price),                     // Pendiente cómo actualizar la imágen
+        price: parseFloat(req.body.price),                     
         id_category: parseInt(req.body.category),
     },
     {

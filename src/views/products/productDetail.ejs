@@ -52,7 +52,23 @@
           <br />
           <div class="products-buttons-container">
 
-            <a href="/cart"><button class = "opciones" >Añadir al Carrito</button></a>
+            <button class = "opciones" id = "addCart">Añadir al Carrito</button>
+
+            <script>
+
+
+              const addCart = document.getElementById("addCart");
+              addCart.addEventListener("click", addToCart);
+
+              function addToCart(){
+
+
+                console.log(session);
+                document.location.href = '/cart';
+
+
+              }
+            </script>
 
             <a href="/products/<%=data.id%>/edit"><button class="opciones">Editar producto</button></a>
 

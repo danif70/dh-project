@@ -19,9 +19,10 @@
         <p>Log in</p>
       </div>
     </a>
+
     <% } else { %>
 
-    <p>Bienvenido <%=  %></p>
+    <p>Bienvenido <%= userinfo.name %></p>
 
     <a href="/logout">
       <div class="log-in">

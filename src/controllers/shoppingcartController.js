@@ -10,6 +10,7 @@ const cartController = {
       styles: ['shoppingCart'],
       title: ['Carrito de Compras'],
       isAuthenticated: req.session.isAuthenticated,
+      userinfo : req.session.userInfo
     });
   },
 };

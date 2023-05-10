@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     // Relaciones --------------------------------------------------------------------
 
     Producto.associate = function (models) {
-        // Producto.belongsToMany(models.carrito_compras, {as: 'carrito_compra', foreignKey: 'id_product' });
+        Producto.belongsToMany(models.carrito_compras, {through: 'producto_carrito_compras' });
         Producto.belongsTo(models.categorias, {as: 'categoria', foreignKey: 'id' });
     } 
 

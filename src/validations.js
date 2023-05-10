@@ -3,7 +3,7 @@ const { body } = require('express-validator');
 const validations = [
     body('nombre').notEmpty().withMessage('El nombre es requerido'),
     body('apellido').notEmpty().withMessage('El apellido es requerido'),
-    body('document').notEmpty().withMessage('El número de documento es requerido'),
+    //body('document').notEmpty().withMessage('El número de documento es requerido'),
     body('email').notEmpty().withMessage('El email es requerido'),
     body('email').isEmail().withMessage('El email no es válido'),
     body('password').notEmpty().withMessage('La contraseña es requerida'),
