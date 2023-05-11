@@ -33,7 +33,11 @@
     <% } %>
     <div class="shopping-cart">
       <a href="/cart"><i class="fa-solid fa-basket-shopping"></i></a>
+      <% if (isAuthenticated) { %>
+      <span><%= userinfo.numProds %></span>
+      <% } else {%>
       <span>0</span>
+      <% } %>
     </div>
   </div>
 </nav>

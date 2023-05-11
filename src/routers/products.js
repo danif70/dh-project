@@ -35,6 +35,9 @@ router.get('/products', productsController.list);
 // GET product detail
 router.get('/products/:id', productsController.detail);
 
+// POST product detail
+router.post('/products/:id', productsController.addToCart);
+
 // GET edit product
 router.get('/products/:id/edit', productsController.edit);
 

@@ -52,24 +52,11 @@
           <br />
           <div class="products-buttons-container">
 
-            <button class = "opciones" id = "addCart">Añadir al Carrito</button>
-
-            <script>
-
-
-              const addCart = document.getElementById("addCart");
-              addCart.addEventListener("click", addToCart);
-
-              function addToCart(){
-
-
-                console.log(session);
-                document.location.href = '/cart';
-
-
-              }
-            </script>
-
+            <form action="/products/<%=data.id%>" method = "POST" class="formcontainer">
+              <input type="submit" value="Añadir al
+Carrito" class="opciones_form">   <!-- No tocar este salto de línea !! -->
+            </form>
+            
             <a href="/products/<%=data.id%>/edit"><button class="opciones">Editar producto</button></a>
 
             <form action="/products/<%=data.id%>?_method=DELETE" method = "POST" class="formcontainer">

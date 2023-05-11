@@ -27,7 +27,12 @@ module.exports = (sequelize, DataTypes) => {
 
     Usuario.associate = function (models){
         Usuario.hasOne(models.carrito_compras, { as: 'carrito_compra', foreignKey: 'id_user' });
+        Usuario.belongsToMany(models.productos, {as:'productos', through: 'shopping_cart', foreignKey: 'id_user', otherKey: 'id_product', timestamps: false});
+
     }
+
+    //        Usuario.belongsToMany(models.productos, {as:'productos', through: 'shopping_cart', foreignKey: 'id_user', otherKey: 'id_product', timestamps: false});
+
     
     return Usuario;
 };

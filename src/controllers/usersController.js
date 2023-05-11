@@ -61,20 +61,36 @@ const usersController = {
       });
     }
 
-    req.session.isAuthenticated = true;
+    req.session.isAuthenticated = true; 
     req.session.userInfo = user;
+   
 
     db.productos.findAll({raw: true, limit: 5 }).then((listaDeProductos) => {
 
-      res.render('index', 
+      db.usuarios.findAll({
+
+        raw: true,
+        where:{id: parseInt(req.session.userInfo.id)},
+        include: {association: "productos"}
+  
+      }).then((data)=>{
+
+        if (data[0]['productos.id'] == null){
+          data = [];
+        }
+
+        req.session.totalProducts = data.length;
+        req.session.userInfo = {...user, numProds: data.length};
+
+        res.render('index', 
         {
           styles: ['index'],
           title: ['Digital Cake'],
           isAuthenticated: req.session.isAuthenticated,
           data: listaDeProductos,
-          userinfo : req.session.userInfo
+          userinfo : req.session.userInfo,
         });
-
+       })
       }).catch((err)=>console.log(err));
 
     
@@ -121,7 +137,7 @@ const usersController = {
     // Creación de usuario con sequelize
     db.usuarios.create(user).then( () => {
 
-        req.session.isAuthenticated = true;
+        req.session.isAuthenticated = false;
         req.session.userInfo = user;
 
         db.productos.findAll({raw: true, limit: 5 }).then((listaDeProductos) => {

@@ -43,7 +43,8 @@ let products = {
         name: req.body.product,
         description: req.body.descripcion,
         price: parseFloat(req.body.price),
-        image: ima,                      // Falta implementar la actualización de imágen
+        isAuthenticated: req.session.isAuthenticated,
+        image: ima,                      
         id_category: parseInt(req.body.category),
       }).then( () => {res.redirect('/products');}).catch((err) => console.log(err));
 
@@ -61,7 +62,7 @@ let products = {
         title: ['Detalle del producto'],
         data: productRequested,      
         isAuthenticated: req.session.isAuthenticated,
-        userinfo : req.session.userInfo
+        userinfo : req.session.userInfo? req.session.userInfo : {id:'0'}
       });
     }).catch((err)=>console.log(err));
 
@@ -114,8 +115,33 @@ let products = {
       where :{
         id : req.params.id
       }
-    }).then( () => {res.redirect('/products');}).catch((err) => console.log(err));
+    }).then( () => {}).catch((err) => console.log(err));
+
+    db.carrito_compras.destroy({
+      where :{
+        id_product : req.params.id
+      }
+    }).then( () => {
+      req.session.userInfo.numProds -= 1;
+      res.redirect('/products');}).catch((err) => console.log(err));
   },
+
+  addToCart: (req,res) => {
+
+    if (!req.session.isAuthenticated) return res.redirect('/login');
+
+    db.carrito_compras.create({
+
+      id_user: req.session.userInfo.id,
+      id_product: req.params.id
+
+    }).then( () => { 
+      req.session.userInfo.numProds += 1;
+      res.redirect('/cart');
+    }).catch((err) => console.log(err));
+  }
+
+
 };
 
 module.exports = products;
