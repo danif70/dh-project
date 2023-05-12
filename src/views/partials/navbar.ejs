@@ -22,6 +22,10 @@
 
     <% } else { %>
 
+    <a href="/edit-profile">
+      <img src="/images/users/<%= userinfo.image %>" alt="Profile" class = "profile_picture" />
+    </a>
+
     <p>Bienvenido <%= userinfo.name %></p>
 
     <a href="/logout">

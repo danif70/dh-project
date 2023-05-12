@@ -155,6 +155,70 @@ const usersController = {
       }).catch((err) => console.log(err));
 
   },
+
+  userEdit: (req, res) => {
+
+    // Redirigiendo a home si el usuario no está logueado, pero
+    if (!req.session.isAuthenticated) return res.redirect('/');
+
+    // Se renderiza el formulario de edición del producto escogido
+    db.usuarios.findOne({raw: true , where:{id: req.session.userInfo.id}}).then((userData) => 
+    {
+      res.render(path.join(__dirname, '../views/users/editProfile.ejs'), {
+        styles: ['create'],
+        title: ['Editar usuario'],
+        user: userData,
+        isAuthenticated: req.session.isAuthenticated,
+        userinfo : req.session.userInfo
+      });
+    }).catch((err)=>console.log(err));
+  },
+
+  userEditData: (req, res) => {
+
+    if (!req.session.isAuthenticated) return res.redirect('/');
+
+    let ima = req.file? req.file.filename:'user_image.jpg';
+
+    console.log(req.body);
+
+    db.usuarios.update({
+
+      name: req.body.nombre,
+      last_name: req.body.apellido,
+      image: ima,
+      password: req.body.contrasena,
+  },
+  {
+    where:{id: req.body.id}
+  }).then(()=>{
+
+      req.session.userInfo.name = req.body.nombre;
+      req.session.userInfo.last_name = req.body.apellido;
+      req.session.userInfo.image = ima;
+      req.session.userInfo.password = req.body.contrasena;
+
+      res.redirect('/');
+
+    }).catch((err)=>console.log(err));
+  },
+
+  deleteData: (req,res) => {
+
+    db.usuarios.destroy({
+    where:{id: req.session.userInfo.id}
+    
+  }).then(()=>{   
+    
+    req.session.isAuthenticated = false; 
+
+    res.redirect('/');
+
+    }).catch((err)=>console.log(err));
+
+
+  },
+
 };
 
 module.exports = usersController;

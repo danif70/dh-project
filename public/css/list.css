@@ -172,3 +172,10 @@ i {
   color: #af762f;
   margin-right: 5px;
 }
+
+.profile_picture{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid #af762f;
+}

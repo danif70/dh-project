@@ -29,5 +29,8 @@ router.post('/login', loginValidations, users.postLogin);
 router.get('/logout', users.getLogout);
 router.get('/register', users.register);
 router.post('/register', [validations, fileUpload.single('file')], users.registerUser);
+router.get('/edit-profile', users.userEdit);
+router.post('/send-edit-profile', fileUpload.single('file'), users.userEditData);
+router.delete('/send-edit-profile', users.deleteData);
 
 module.exports = router;
