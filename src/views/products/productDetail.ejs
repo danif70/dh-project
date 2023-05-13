@@ -16,24 +16,24 @@
       <div class="product-images">
         <div class="images-list">
           <div class="image-thumbnail">
-            <img src="<%=data.image%>" alt="Thumbnail 1" />
+            <img src="/images/products/<%=data.image%>" alt="Thumbnail 1" />
           </div>
           <div class="image-thumbnail">
-            <img src="<%=data.image%>" alt="Thumbnail 2" />
+            <img src="/images/products/<%=data.image%>" alt="Thumbnail 2" />
           </div>
           <div class="image-thumbnail">
-            <img src="<%=data.image%>" alt="Thumbnail 3" />
+            <img src="/images/products/<%=data.image%>" alt="Thumbnail 3" />
           </div>
         </div>
         <div class="image-preview">
-          <img src="<%=data.image%>" alt="Preview 1" />
+          <img src="/images/products/<%=data.image%>" alt="Preview 1" class = "image_preview"/>
         </div>
         <div class="product-info">
           <h2><%=data.name%></h2>
           <br />
-          <p><strong>Precio:</strong><%=data.price%></p>
+          <p><strong>Precio:</strong> <%=data.price%></p>
           <br />
-        
+      
           <% let Cuota = parseFloat(data.price)/4; %>
 
           <p><strong>Promo:</strong> 4 pagos de <%= Cuota %> dólares con Visa</p>
@@ -51,29 +51,22 @@
           </ul>
           <br />
           <div class="products-buttons-container">
-            <button>Añadir al Carrito</button>
 
-            <a href="/products/<%=data.id%>/edit"><button>Editar producto</button></a>
-  
-            <form action="/products/<%=data.id%>?_method=DELETE" method = "POST">
-              <input type="submit" value="Eliminar producto">
+            <form action="/products/<%=data.id%>" method = "POST" class="formcontainer">
+              <input type="submit" value="Añadir al
+Carrito" class="opciones_form">   <!-- No tocar este salto de línea !! -->
             </form>
-          </div>
+            
+            <a href="/products/<%=data.id%>/edit"><button class="opciones">Editar producto</button></a>
 
+            <form action="/products/<%=data.id%>?_method=DELETE" method = "POST" class="formcontainer">
+              <input type="submit" value="Eliminar
+producto" class="opciones_form">   <!-- No tocar este salto de línea !! -->
+            </form>
+
+          </div>
         </div>
       </div>
-
-      <!-- <div class="general-information">
-          <div class="ingredients">
-            <h4>Info. General</h4>
-          </div>
-          <div class="ingredients">
-            <h4>Ingredientes</h4>
-          </div>
-          <div class="alert">
-            <h4>Contraindicaciones</h4>
-          </div>
-        </div> -->
     </div>
   </main>
 

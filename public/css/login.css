@@ -51,8 +51,14 @@ nav .titles {
 }
 
 .logo img {
-  width: 100px;
+  width: 80px;
   height: 80px;
+}
+
+
+.logo a :hover {
+  border-radius: 50%;
+  border: 3px solid #af762f;
 }
 
 .titles p {
@@ -120,6 +126,12 @@ main {
 .imagenes {
   padding: 10px;
   text-align: center;
+  margin-right: 10px;
+}
+
+.imagenes .logo{
+  border: solid #af762f 2px;
+  border-radius: 50%;
 }
 
 .logo {
@@ -192,7 +204,7 @@ main {
   width: 80%;
   max-width: 700px;
   text-align: left;
-  position: relative;
+  /* position: relative; */
   left: 30px;
 }
 
@@ -204,6 +216,22 @@ main {
     transform: rotate(359deg);
   }
 }
+
+.error{
+  color: red;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 2px;
+  text-align: left;
+}
+
+.profile_picture{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid #af762f;
+}
+
 
 /* footer -------------------------------*/
 

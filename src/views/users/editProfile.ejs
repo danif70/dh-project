@@ -11,21 +11,20 @@
             <section class="mensaje">
                 <h2 class="mensaje1">Dashboard</h2>
                 <p class="mensaje2">
-                    Desde aquí puedes añadir nuevos productos a la tienda.
+                    Desde aquí puedes editar tu perfil.
                 </p>
             </section>
         </div>
 
-        <form action="/products/<%=product.id%>/edit?_method=PUT" method="POST"  enctype="multipart/form-data">
+        <form action="/send-edit-profile" method="POST"  enctype="multipart/form-data">
             <div class="content">
-                <label for="product">Nombre Producto</label>
-                <input type="text" name="product" id="product" class="input" value="<%=product.name%>" required>
+                <label for="product">Nombre</label>
+                <input type="text" name="nombre" id="product" class="input" value="<%=user.name%>" required>
 
-                <input type="text" name="id" id="id_hidden" class="id_hidden" value="<%=product.id%>" required>
+                <input type="text" name="id" id="id_hidden" class="id_hidden" value="<%=user.id%>" required>
 
-                <label for="descripcion">Descripción Producto</label>
-                <input type="text" name="descripcion" id="descripcion" class="input"
-                    value="<%=product.description%>" required>
+                <label for="product">Apellido</label>
+                <input type="text" name="apellido" id="product" class="input" value="<%=user.last_name%>" required>
 
                 <div class="container-file" >
                     <input type="file" name="file" id="file" class="inputfile inputfile-1"
@@ -41,21 +40,20 @@
                     </label>
                 </div>
 
-                <label for="price">Precio</label>
-                <input type="number" name="price" id="price" class="input" value="<%=product.price%>" required>
-
-                <label for="category">Categoría</label>
-                <select name="category" id="category" class="select" value="<%=product.category%>" required>
-                    <option value="1">Escoger categoría</option>
-                    <option value="2">Ponqués</option>
-                    <option value="3">Galletas</option>
-                    <option value="4">Budines</option>
-                    <option value="5">Postres</option>
-                </select>
+                <label for="product">Contraseña</label>
+                <input type="text" name="contrasena" id="product" class="input" value="<%=user.password%>" required>
                 
                 <button type="submit" class="añadir"> Editar</button>
             </div>
         </form>
+
+        <form action="/send-edit-profile?_method=DELETE" method = "POST" class="formcontainer">
+            <div class="content_new">
+            <input type="submit" value="Eliminar
+usuario" class="opciones_form">   <!-- No tocar este salto de línea !! -->
+            </div>
+          </form>
+
     </main>
 
     <%- include('../partials/footer') %>
