@@ -10,6 +10,7 @@ const index = require('./src/routers/index');
 const cart = require('./src/routers/shop');
 const products = require('./src/routers/products');
 const users = require('./src/routers/users');
+const api = require('./src/routers/api');
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.use(index);
 app.use(users);
 app.use(cart);
 app.use(products);
+app.use(api);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
