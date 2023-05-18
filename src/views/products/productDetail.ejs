@@ -56,13 +56,17 @@
               <input type="submit" value="Añadir al
 Carrito" class="opciones_form">   <!-- No tocar este salto de línea !! -->
             </form>
-            
+
+            <% if (isAuthenticated && userinfo.is_admin == 1) { %>
+
             <a href="/products/<%=data.id%>/edit"><button class="opciones">Editar producto</button></a>
 
             <form action="/products/<%=data.id%>?_method=DELETE" method = "POST" class="formcontainer">
               <input type="submit" value="Eliminar
 producto" class="opciones_form">   <!-- No tocar este salto de línea !! -->
             </form>
+
+            <% } %>
 
           </div>
         </div>
