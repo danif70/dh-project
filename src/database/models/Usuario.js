@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         email: {type: DataTypes.TEXT},
         password: {type: DataTypes.TEXT},
         image: {type: DataTypes.TEXT},
+        is_admin: {type: DataTypes.INTEGER}
     };
 
     let config = {

@@ -62,8 +62,7 @@ const usersController = {
     }
 
     req.session.isAuthenticated = true; 
-    req.session.userInfo = user;
-   
+    req.session.userInfo = user;   
 
     db.productos.findAll({raw: true, limit: 5 }).then((listaDeProductos) => {
 
