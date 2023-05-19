@@ -24,6 +24,7 @@
         <div class="nota">Ingrésalo tal como aparece en tu documento.</div>
 
         <input type="text" name="nombre" id="nombre"  value="<%=locals.values ? values.nombre : '' %>"/>
+        <div class="name-error"></div>
         <% if(locals.errors && errors.nombre){%>
           <div class = "error_message">
           <p><%=errors.nombre.msg%></p>
@@ -35,6 +36,7 @@
         <div class="nota">Ingrésalo tal como aparece en tu documento.</div>
 
         <input type="text" name="apellido" id="apellido"  value="<%=locals.values ? values.apellido : '' %>" />
+        <div class="surname-error"></div>
         <% if(locals.errors && errors.apellido){%>
           <div class = "error_message">
           <p class = "error_message"><%=errors.apellido.msg%></p>
@@ -44,6 +46,7 @@
         <label for="email"></label>
         <div class="input">E-mail</div>
         <input  name="email" id="email"  value="<%=locals.values ? values.email : '' %>"/>
+        <div class="email-error"></div>
         <% if(locals.errors && errors.email){%>
           <div class = "error_message">
           <p class = "error_message"><%=errors.email.msg%></p>
@@ -53,6 +56,7 @@
         <label for="contraseña"></label>
         <div class="input">Contraseña</div>
         <input type="password" name="password" id="contraseña" />
+        <div class="password-error"></div>
         <% if(locals.errors && errors.password){%>
           <div class = "error_message">
           <p class = "error_message"><%=errors.password.msg%></p>
@@ -66,6 +70,7 @@
           name="reppassword"
           id="repcontraseña"
         />
+        <div class="repeat-password-error"></div>
         <% if(locals.errors && errors.reppassword){%>
           <div class = "error_message">
           <p class = "error_message"><%=errors.reppassword.msg%></p>
@@ -74,12 +79,13 @@
 
         <div class="check">
           <label for="terminos"></label>
-          <input type="checkbox" name="terminos" id="terminos" required />Acepto los términos y
+          <input type="checkbox" name="terminos" id="terminos" />Acepto los términos y
           condiciones
         </div>
+        <div class="check-terms-error"></div>
 
         <div class="button_container">
-          <button class="registrarse" type="submit">
+          <button class="registrarse" type="submit" id="register-button">
             Registrarse
           </button>
         </div>
@@ -87,5 +93,6 @@
     </main>
 
     <%- include('../partials/footer') %>
+    <script src="/js/validations/register.js"></script>
   </body>
 </html>
