@@ -1,50 +1,59 @@
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const emailError = document.querySelector('.email-error');
-const passwordError = document.querySelector('.password-error');
-const buttonLogin = document.querySelector('.login');
+document.addEventListener('DOMContentLoaded', function () {
+  const loginForm = document.getElementById('login-form');
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const loginButton = document.getElementById('login-button');
 
-// Disable login button OnLoad
-window.onload = () => {
-  buttonLogin.disabled = true;
-};
-
-let emailValid = false;
-let passwordValid = false;
-
-// Validate if is a valid email and disable login button if not
-email.addEventListener('keyup', () => {
-  let warning = '';
-  const regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-
-  if (!regexEmail.test(email.value.trim())) {
-    warning += 'El email no es válido';
-    buttonLogin.disabled = true;
-    emailValid = false;
-  } else {
-    emailValid = true;
-    if (passwordValid) {
-      buttonLogin.disabled = false;
+  loginForm.addEventListener('submit', function (event) {
+    if (!validateForm()) {
+      loginButton.disabled = true;
+      event.preventDefault();
     }
+  });
+
+  emailInput.addEventListener('input', function () {
+    validateEmail();
+    checkFormValidity();
+  });
+
+  passwordInput.addEventListener('input', function () {
+    validatePassword();
+    checkFormValidity();
+  });
+
+  function validateForm() {
+    const isValidEmail = validateEmail();
+    const isValidPassword = validatePassword();
+
+    return isValidEmail && isValidPassword;
   }
 
-  emailError.innerHTML = warning;
-});
+  function validateEmail() {
+    const emailError = document.querySelector('.email-error');
+    emailError.textContent = '';
 
-// Enable login button if email and password are valid
-password.addEventListener('keyup', () => {
-  let warning = '';
-
-  if (!password.value.trim().length > 0) {
-    warning = 'La contraseña no puede estar vacía';
-    buttonLogin.disabled = true;
-    passwordValid = false;
-  } else {
-    passwordValid = true;
-    if (emailValid) {
-      buttonLogin.disabled = false;
+    if (emailInput.value.trim() === '') {
+      emailError.textContent = 'Por favor, ingresa tu correo electrónico.';
+      return false;
     }
+
+    return true;
   }
 
-  passwordError.innerHTML = warning;
+  function validatePassword() {
+    const passwordError = document.querySelector('.password-error');
+    passwordError.textContent = '';
+
+    if (passwordInput.value.trim() === '') {
+      passwordError.textContent = 'Por favor, ingresa una contraseña.';
+      return false;
+    }
+
+    return true;
+  }
+
+  function checkFormValidity() {
+    const isValidForm = validateForm();
+    loginButton.disabled = !isValidForm;
+  }
 });

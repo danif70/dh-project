@@ -182,7 +182,12 @@ main {
   border: solid #af762f 1px;
 }
 
-.email-error, .password-error {
+.email-error,
+.password-error,
+.name-error,
+.surname-error,
+.repeat-password-error,
+.check-terms-error {
   color: red;
   font-size: 11px;
   font-weight: 400;
