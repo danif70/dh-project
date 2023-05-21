@@ -168,10 +168,10 @@ COMMIT;
 
 
 INSERT INTO products(id, name, description, price, image, id_category) VALUES (1,'Limonada de menta','Limonada de menta',50.0,'product_1.jpg',1);
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (2,'Pastel de cumpleaños','Pastel de cumpleaños',200.0,'product_2.jpg',2);
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (3,'Cheesecake de mora','Cheesecake de mora',300.0,'product_3.jpg',2);
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (4,'Torta de nuez','Torta de nuez',500.0,'product_4.jpg',2);
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (5,'Maccaroons','Maccaroons',800.0,'product_5.jpg',3);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (2,'Pastel de cumpleaños','Pastel de cumpleaños',200.0,'product_2.jpg',4);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (3,'Cheesecake de mora','Cheesecake de mora',300.0,'product_3.jpg',3);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (4,'Torta de nuez','Torta de nuez',500.0,'product_4.jpg',4);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (5,'Maccaroons','Maccaroons',800.0,'product_5.jpg',2);
 
 INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (1,'Guillermo','Moreno','g.moreno@test.com','g123','user_image.jpg',1);
 INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (2,'María','Ruiz','m.ruiz@test.com','m123','user_image.jpg',1);
@@ -180,8 +180,9 @@ INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES 
 INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (5,'Enrique','Rosales','e.rosales@test.com','e123','user_image.jpg',0);
 
 INSERT INTO categories(id, name) VALUES (1,'Bebidas');
-INSERT INTO categories(id, name) VALUES (2,'Pasteles');
-INSERT INTO categories(id, name) VALUES (3,'Dulces');
+INSERT INTO categories(id, name) VALUES (2,'Galletas');
+INSERT INTO categories(id, name) VALUES (3,'Budines');
+INSERT INTO categories(id, name) VALUES (4,'Postres');
 
 INSERT INTO shopping_cart(id, id_user, id_product) VALUES (1, 1, 5);
 INSERT INTO shopping_cart(id, id_user, id_product) VALUES (2, 2, 3);

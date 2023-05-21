@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "12345678",
     "database": "digital_cake_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
