@@ -20,12 +20,14 @@
             <div class="content">
                 <label for="product">Nombre Producto</label>
                 <input type="text" name="product" id="product" class="input" value="<%=product.name%>" required>
+                <div class="product-error"></div>
 
                 <input type="text" name="id" id="id_hidden" class="id_hidden" value="<%=product.id%>" required>
 
                 <label for="descripcion">Descripción Producto</label>
                 <input type="text" name="descripcion" id="descripcion" class="input"
                     value="<%=product.description%>" required>
+                <div class="description-error"></div>
 
                 <div class="container-file" >
                     <input type="file" name="file" id="file" class="inputfile inputfile-1"
@@ -40,9 +42,11 @@
                         <span class="iborrainputfile">Seleccionar archivo</span>
                     </label>
                 </div>
+                <div class="file-error"></div>
 
                 <label for="price">Precio</label>
                 <input type="number" name="price" id="price" class="input" value="<%=product.price%>" required>
+                <div class="price-error"></div>
 
                 <label for="category">Categoría</label>
                 <select name="category" id="category" class="select" value="<%=product.category%>" required>
@@ -52,6 +56,7 @@
                     <option value="4">Budines</option>
                     <option value="5">Postres</option>
                 </select>
+                <div class="category-error"></div>
                 
                 <button type="submit" class="añadir"> Editar</button>
             </div>
@@ -60,6 +65,7 @@
 
     <%- include('../partials/footer') %>
 
+    <script src="/js/validations/create-editProduct.js"></script>
     </body>
 
 </html>

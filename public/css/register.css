@@ -120,22 +120,16 @@ form {
   align-items: center;
 }
 
-form p{
+form p {
   color: red;
   font-size: 11px;
   font-weight: 400;
-  margin: 2px;
   text-align: left;
 }
 
 #nombre,
 #apellido,
-#id,
-#nacimiento,
 #email,
-#pais,
-#ciudad,
-#direccion,
 #contraseña,
 #repcontraseña {
   margin: 10px;
@@ -149,12 +143,6 @@ form p{
 }
 
 
-#pais,
-#nacimiento {
-  padding-right: 10px;
-  background-color: white;
-}
-
 #terminos {
   margin: 10px;
   border: none;
@@ -162,6 +150,19 @@ form p{
   padding-left: 20px;
   max-width: 700px;
   border: solid #af762f 1px;
+}
+
+.email-error,
+.password-error,
+.name-error,
+.surname-error,
+.repeat-password-error,
+.check-terms-error {
+  color: red;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 2px;
+  text-align: left;
 }
 
 .nota {
@@ -188,9 +189,22 @@ form p{
   font-weight: bold;
 }
 
-.registrarse:hover {
+/* Center register button */
+.button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registrarse:hover:enabled {
   background-color: #f5cf8e;
   cursor: pointer;
+}
+
+button:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 .check,

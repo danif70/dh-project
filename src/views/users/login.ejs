@@ -15,10 +15,11 @@
         <div class="datos">
           <h2 class="marca">Digital Cake</h2>
 
-          <form action="/login" method="post">
+          <form action="/login" method="post" id="login-form">
             <label for="email"></label>
             <div class="input">Usuario</div>
             <input type="text" name="email" id="email" placeholder="Email"  />
+            <div class="email-error"></div>
 
             <% if (loginErrors[0]) { %>
               <div class="error">
@@ -29,6 +30,7 @@
             <label for="password"></label>
             <div class="input">Contraseña</div>
             <input type="password" name="password" id="password"  />
+            <div class="password-error"></div>
 
             <% if (loginErrors[1]) { %>
               <div class="error">
@@ -44,9 +46,8 @@
             <% } %>
 
             <div class="button_container">
-              <button class="registrarse">
+              <button class="registrarse" id="login-button">
                 Ingresar
-                <a href="#"></a>
               </button>
             </div>
           </form>
@@ -63,5 +64,6 @@
     </main>
 
     <%- include('../partials/footer') %>
+    <script src="js/validations/login.js"></script>
   </body>
 </html>
