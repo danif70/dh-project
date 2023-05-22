@@ -166,6 +166,14 @@ label {
   width: 80%;
 }
 
+.product-error, .description-error, .file-error, .price-error, .category-error {
+  color: red;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 2px;
+  text-align: left;
+}
+
 .welcome {
   display: flex;
   flex-wrap: wrap;
@@ -225,6 +233,12 @@ img {
 .inputfile-1 + label:hover {
   background-color: #9f8465;
   cursor: pointer;
+}
+
+button:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 @media (min-width: 492px) {
@@ -291,7 +305,7 @@ img {
   margin-top: 0px;
 }
 
-.opciones_form:hover, .añadir:hover {
+.opciones_form:hover, .añadir:hover:enabled {
   background-color: #f5cf8e;
   cursor: pointer;
 }
