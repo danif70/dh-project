@@ -130,7 +130,9 @@ const usersController = {
       last_name: req.body.apellido,
       email: req.body.email,
       password: req.body.password,
-      image: 'user_image.jpg'                   
+      image: 'user_image.jpg',
+      is_admin: 0     
+
     }
 
     // Creación de usuario con sequelize

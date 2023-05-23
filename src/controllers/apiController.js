@@ -27,6 +27,7 @@ let api = {
               name: producto.name,
               description: producto.description,
               detail: `/products/${producto.id}`,
+              img: `/images/products/${producto.image}`,
               // category: producto.id_category,
             };
           }),

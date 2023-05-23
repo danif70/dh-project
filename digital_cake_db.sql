@@ -167,17 +167,17 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (1,'Limonada de menta','Limonada de menta',50.0,'product_1.jpg',1);
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (2,'Pastel de cumpleaños','Pastel de cumpleaños',200.0,'product_2.jpg',4);
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (3,'Cheesecake de mora','Cheesecake de mora',300.0,'product_3.jpg',3);
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (4,'Torta de nuez','Torta de nuez',500.0,'product_4.jpg',4);
-INSERT INTO products(id, name, description, price, image, id_category) VALUES (5,'Maccaroons','Maccaroons',800.0,'product_5.jpg',2);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (1,'Limonada de menta','Deliciosa y refrescante',50.0,'product_1.jpg',1);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (2,'Pastel de cumpleaños','La más dulce celebración',200.0,'product_2.jpg',4);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (3,'Cheesecake de mora','Elegancia y delicado sabor',300.0,'product_3.jpg',3);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (4,'Torta de nuez','El mejor acompañante para el café',500.0,'product_4.jpg',4);
+INSERT INTO products(id, name, description, price, image, id_category) VALUES (5,'Maccaroons','Pequeños bocados de dulzura',800.0,'product_5.jpg',2);
 
-INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (1,'Guillermo','Moreno','g.moreno@test.com','g123','user_image.jpg',1);
-INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (2,'María','Ruiz','m.ruiz@test.com','m123','user_image.jpg',1);
-INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (3,'Gloria','Perez','g.perez@test.com','gp123','user_image.jpg',0);
-INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (4,'Juan','Castillo','j.castillo@test.com','j123','user_image.jpg',0);
-INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (5,'Enrique','Rosales','e.rosales@test.com','e123','user_image.jpg',0);
+INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (1,'Guillermo','Moreno','g.moreno@test.com','g1234567','user_image.jpg',1);
+INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (2,'María','Ruiz','m.ruiz@test.com','m1234567','user_image.jpg',1);
+INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (3,'Gloria','Perez','g.perez@test.com','gp1234567','user_image.jpg',0);
+INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (4,'Juan','Castillo','j.castillo@test.com','j1234567','user_image.jpg',0);
+INSERT INTO users(id, name, last_name, email, password, image, is_admin) VALUES (5,'Enrique','Rosales','e.rosales@test.com','e1234567','user_image.jpg',0);
 
 INSERT INTO categories(id, name) VALUES (1,'Bebidas');
 INSERT INTO categories(id, name) VALUES (2,'Galletas');
