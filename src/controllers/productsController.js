@@ -35,7 +35,7 @@ let products = {
   create: (req, res) => {
     if (!req.session.isAuthenticated) return res.redirect('/login');
 
-    let ima = req.file? req.file.filename:'product_7.jpg';
+    let ima = req.file? req.file.filename:'img_default.jpg';
 
     // Creación de producto con sequelize
     db.productos.create(
@@ -89,7 +89,7 @@ let products = {
 
     if (!req.session.isAuthenticated) return res.redirect('/login');
 
-    let ima = req.file? req.file.filename:'product_'+req.body.id+'.jpg';
+    let ima = req.file ? req.file.filename : req.body.file;
 
     // Se actualiza el producto escogido
     db.productos.update({
