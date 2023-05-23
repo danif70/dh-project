@@ -6,53 +6,66 @@
     <%- include('../partials/navbar') %>
 </header>
   <main>
+
     <h4 class="product-title">Carrito de Compras</h4>
-    <div class="product">
-      <img src="images/products/product_6.jpg" alt="pan" class="product-image" />
-      <div class="product-texts">
-        <p class="name-product">Nombre del producto</p>
-        <p class="price-product">Precio</p>
+
+    <div class="product-container">
+
+
+    <% if (productsInUserCart.length > 0) { %>
+
+    <% let total = 0.0; %>
+    <% let arrProducts = []; %>
+    <% let arrQantities = []; %>
+
+
+    <% for (let i = 0; i< productsInUserCart.length; i++){ %>
+
+      <% total += parseFloat(productsInUserCart[i]['productos.price']); %>
+
+      <% arrProducts.push(productsInUserCart[i]['productos.id']); %>
+
+      <% arrQantities.push(1); %>
+
+      <div class="product">
+        <img src="images/products/<%= productsInUserCart[i]['productos.image']%>" alt="pan" class="product-image" />
+        <div class="product-texts">
+          <p class="name-product"><%= productsInUserCart[i]['productos.name']%></p>
+          <p class="price-product"><%= productsInUserCart[i]['productos.price']%></p>
+        </div>
       </div>
+      
+      <%}%>
+
+    <% console.log(arrProducts); %>
+    <% console.log(arrQantities); %>
+
+
     </div>
-    <div class="product">
-      <img src="images/products/product_6.jpg" alt="pan" class="product-image" />
-      <div class="product-texts">
-        <p class="name-product">Nombre del producto</p>
-        <p class="price-product">Precio</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="images/products/product_6.jpg" alt="pan" class="product-image" />
-      <div class="product-texts">
-        <p class="name-product">Nombre del producto</p>
-        <p class="price-product">Precio</p>
-      </div>
-    </div>
-    <div class="product">
-      <img src="images/products/product_6.jpg" alt="pan" class="product-image" />
-      <div class="product-texts">
-        <p class="name-product">Nombre del producto</p>
-        <p class="price-product">Precio</p>
-      </div>
-    </div>
+
     <div class="total-prices">
       <div class="prices">
         <p>Subtotal</p>
-        <p>xxxxxxxx</p>
+        <p><%= total.toFixed(2) %></p>
       </div>
       <div class="prices">
         <p>Impuestos</p>
-        <p>xxxxxxxx</p>
+        <p><%= total*0.1 %></p>
       </div>
       <div class="prices">
         <p>Envio</p>
-        <p>xxxxxxxx</p>
+        <p><%= total*0.05 %></p>
       </div>
       <div class="prices total">
         <p>TOTAL</p>
-        <p>XXXXXXX</p>
+        <p><%= total + total*0.1 + total*0.05%></p>
       </div>
     </div>
+
+    <% } if (productsInUserCart.length == 0) { %>
+      <h6 class="product-empty">Carrito Vacío</h6>
+    <% } %>
+
   </main>
   <%- include('../partials/footer') %>
 

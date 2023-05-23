@@ -16,18 +16,22 @@
             </section>
         </div>
 
-        <form action="/products/<%=product.id%>/edit?_method=PUT" method="POST">
+        <form action="/products/<%=product.id%>/edit?_method=PUT" method="POST"  enctype="multipart/form-data">
             <div class="content">
                 <label for="product">Nombre Producto</label>
                 <input type="text" name="product" id="product" class="input" value="<%=product.name%>" required>
+                <div class="product-error"></div>
+
+                <input type="text" name="id" id="id_hidden" class="id_hidden" value="<%=product.id%>" required>
 
                 <label for="descripcion">Descripción Producto</label>
                 <input type="text" name="descripcion" id="descripcion" class="input"
                     value="<%=product.description%>" required>
+                <div class="description-error"></div>
 
-                <div class="container-file">
+                <div class="container-file" >
                     <input type="file" name="file" id="file" class="inputfile inputfile-1"
-                        data-multiple-caption="{count} archivos seleccionados" multiple />
+                        data-multiple-caption="{count} archivos seleccionados" multiple value=<%=product.image%>/>
                     <label for="file">
                         <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17"
                             viewBox="0 0 20 17">
@@ -38,26 +42,30 @@
                         <span class="iborrainputfile">Seleccionar archivo</span>
                     </label>
                 </div>
+                <div class="file-error"></div>
 
                 <label for="price">Precio</label>
                 <input type="number" name="price" id="price" class="input" value="<%=product.price%>" required>
+                <div class="price-error"></div>
 
                 <label for="category">Categoría</label>
                 <select name="category" id="category" class="select" value="<%=product.category%>" required>
-                    <option value="Escoger">Escoger categoría</option>
-                    <option value="Ponqués">Ponqués</option>
-                    <option value="Galletas">Galletas</option>
-                    <option value="Budines">Budines</option>
-                    <option value="Postres">Postres</option>
+                    <option value="1">Escoger categoría</option>
+                    <option value="2">Ponqués</option>
+                    <option value="3">Galletas</option>
+                    <option value="4">Budines</option>
+                    <option value="5">Postres</option>
                 </select>
+                <div class="category-error"></div>
                 
-                <button type="submit" class="añadir"> Añadir</button>
+                <button type="submit" class="añadir"> Editar</button>
             </div>
         </form>
     </main>
 
     <%- include('../partials/footer') %>
 
+    <script src="/js/validations/create-editProduct.js"></script>
     </body>
 
 </html>

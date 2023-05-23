@@ -18,70 +18,49 @@
       </div>
 
       <form action="/register" method="post" 
-      enctype="application/x-www-form-urlencoded">
+      enctype="application/x-www-form-urlencoded" enctype="multipart/form-data">
         <label for="nombre"></label>
         <div class="input">Nombre</div>
-        <input type="text" name="nombre" id="nombre"  value="<%=locals.values ? values.nombre : '' %>"/>
-        <% if(locals.errors && errors.nombre){%>
-          <p><%=errors.nombre.msg%></p>
-        <%}%>
         <div class="nota">Ingrésalo tal como aparece en tu documento.</div>
+
+        <input type="text" name="nombre" id="nombre"  value="<%=locals.values ? values.nombre : '' %>"/>
+        <div class="name-error"></div>
+        <% if(locals.errors && errors.nombre){%>
+          <div class = "error_message">
+          <p><%=errors.nombre.msg%></p>
+          </div>
+        <%}%>
 
         <label for="apellido"></label>
         <div class="input">Apellido</div>
-        <input type="text" name="apellido" id="apellido"  value="<%=locals.values ? values.apellido : '' %>" />
-        <% if(locals.errors && errors.apellido){%>
-          <p><%=errors.apellido.msg%></p>
-        <%}%>
         <div class="nota">Ingrésalo tal como aparece en tu documento.</div>
 
-        <label for="id"></label>
-        <div class="input">Documento de identidad</div>
-        <% if(locals.errors && errors.document){%>
-          <p><%=errors.document.msg%></p>
+        <input type="text" name="apellido" id="apellido"  value="<%=locals.values ? values.apellido : '' %>" />
+        <div class="surname-error"></div>
+        <% if(locals.errors && errors.apellido){%>
+          <div class = "error_message">
+          <p class = "error_message"><%=errors.apellido.msg%></p>
+          </div>
         <%}%>
-        <input type="number" name="document" id="id" placeholder="ID"  value="<%=locals.values ? values.document : '' %>" />
-
-        <!-- <label for="nacimiento"></label>
-        <div class="input">Fecha de nacimiento</div>
-        <input type="date" name="nacimiento" id="nacimiento" required /> -->
 
         <label for="email"></label>
         <div class="input">E-mail</div>
         <input  name="email" id="email"  value="<%=locals.values ? values.email : '' %>"/>
+        <div class="email-error"></div>
         <% if(locals.errors && errors.email){%>
-          <p><%=errors.email.msg%></p>
+          <div class = "error_message">
+          <p class = "error_message"><%=errors.email.msg%></p>
+          </div>
         <%}%>
 
-        <!-- <label for="pais"></label>
-        <div class="input">País</div>
-        <select name="pais" id="pais" required>
-          <option value="Escoger">Escoger país</option>
-          <option value="Argentina">Argentina</option>
-          <option value="Bolivia">Bolivia</option>
-          <option value="Brasil">Brasil</option>
-          <option value="Chile">Chile</option>
-          <option value="Colombia">Colombia</option>
-          <option value="Ecuador">Ecuador</option>
-          <option value="Paraguay">Paraguay</option>
-          <option value="Perú">Perú</option>
-          <option value="Uruguay">Uruguay</option>
-          <option value="Venezuela">Venezuela</option>
-        </select> -->
-
-       <!--  <label for="ciudad"></label>
-        <div class="input">Ciudad</div>
-        <input type="text" name="ciudad" id="ciudad" required /> -->
-
-       <!--  <label for="direccion"></label>
-        <div class="input">Dirección</div>
-        <input type="text" name="direccion" id="direccion" required />
- -->
         <label for="contraseña"></label>
         <div class="input">Contraseña</div>
         <input type="password" name="password" id="contraseña" />
+        <div class="password-error"></div>
         <% if(locals.errors && errors.password){%>
-          <p><%=errors.password.msg%></p>
+          <div class = "error_message">
+          <p class = "error_message"><%=errors.password.msg%></p>
+          </div>
         <%}%>
 
         <label for="repcontraseña"></label>
@@ -91,18 +70,22 @@
           name="reppassword"
           id="repcontraseña"
         />
+        <div class="repeat-password-error"></div>
         <% if(locals.errors && errors.reppassword){%>
-          <p><%=errors.reppassword.msg%></p>
+          <div class = "error_message">
+          <p class = "error_message"><%=errors.reppassword.msg%></p>
+          </div>
         <%}%>
 
         <div class="check">
           <label for="terminos"></label>
-          <input type="checkbox" name="terminos" id="terminos" required />Acepto los términos y
+          <input type="checkbox" name="terminos" id="terminos" />Acepto los términos y
           condiciones
         </div>
+        <div class="check-terms-error"></div>
 
         <div class="button_container">
-          <button class="registrarse" type="submit">
+          <button class="registrarse" type="submit" id="register-button">
             Registrarse
           </button>
         </div>
@@ -110,5 +93,6 @@
     </main>
 
     <%- include('../partials/footer') %>
+    <script src="/js/validations/register.js"></script>
   </body>
 </html>

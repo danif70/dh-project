@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+    <header>
+        <%- include('../partials/navbar') %>
+    </header>
+
+    <main>
+        <div class="welcome">
+            <section class="mensaje">
+                <h2 class="mensaje1">Dashboard</h2>
+                <p class="mensaje2">
+                    Desde aquí puedes editar tu perfil.
+                </p>
+            </section>
+        </div>
+
+        <form action="/send-edit-profile" method="POST"  enctype="multipart/form-data">
+            <div class="content">
+                <label for="product">Nombre</label>
+                <input type="text" name="nombre" id="product" class="input" value="<%=user.name%>" required>
+
+                <input type="text" name="id" id="id_hidden" class="id_hidden" value="<%=user.id%>" required>
+
+                <label for="product">Apellido</label>
+                <input type="text" name="apellido" id="product" class="input" value="<%=user.last_name%>" required>
+
+                <div class="container-file" >
+                    <input type="file" name="file" id="file" class="inputfile inputfile-1"
+                        data-multiple-caption="{count} archivos seleccionados" multiple />
+                    <label for="file">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17"
+                            viewBox="0 0 20 17">
+                            <path
+                                d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z">
+                            </path>
+                        </svg>
+                        <span class="iborrainputfile">Seleccionar archivo</span>
+                    </label>
+                </div>
+
+                <label for="product">Contraseña</label>
+                <input type="text" name="contrasena" id="product" class="input" value="<%=user.password%>" required>
+                
+                <button type="submit" class="añadir"> Editar</button>
+            </div>
+        </form>
+
+        <form action="/send-edit-profile?_method=DELETE" method = "POST" class="formcontainer">
+            <div class="content_new">
+            <input type="submit" value="Eliminar
+usuario" class="opciones_form">   <!-- No tocar este salto de línea !! -->
+            </div>
+          </form>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+
+    </body>
+
+</html>

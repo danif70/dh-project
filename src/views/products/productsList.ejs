@@ -11,7 +11,7 @@
 
         <div class="section">
           <a href="/products/<%= products[i].id %>"
-            ><img src="<%= products[i].image %>" class="images"
+            ><img src="/images/products/<%= products[i].image %>" class="images"
           /></a>
           <br />
           <h3><%= products[i].name %></h3>
@@ -20,9 +20,14 @@
         <% } %>
       </div>
 
+      <% if (isAuthenticated && userinfo.is_admin == 1) { %>
+
       <div class="add">
         <a href="/create"><i class="fa-solid fa-square-plus fa-2xl"></i></a> Añadir un producto
       </div>
+      
+      <% } %>
+
     </main>
 
     <%- include('../partials/footer') %>

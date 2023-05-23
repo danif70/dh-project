@@ -1,6 +1,8 @@
 <nav>
   <div class="logo">
+    <a href="/">
     <img src="/images/logo.svg" alt="Logo" />
+    </a>
   </div>
   <div class="titles">
     <p class="sub-title">Breads</p>
@@ -17,7 +19,15 @@
         <p>Log in</p>
       </div>
     </a>
+
     <% } else { %>
+
+    <a href="/edit-profile">
+      <img src="/images/users/<%= userinfo.image %>" alt="Profile" class = "profile_picture" />
+    </a>
+
+    <p>Bienvenido <%= userinfo.name %></p>
+
     <a href="/logout">
       <div class="log-in">
         <i class="fa-solid fa-right-to-bracket"></i>
@@ -27,7 +37,11 @@
     <% } %>
     <div class="shopping-cart">
       <a href="/cart"><i class="fa-solid fa-basket-shopping"></i></a>
+      <% if (isAuthenticated) { %>
+      <span><%= userinfo.numProds %></span>
+      <% } else {%>
       <span>0</span>
+      <% } %>
     </div>
   </div>
 </nav>
