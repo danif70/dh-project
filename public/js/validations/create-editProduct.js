@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   fileInput.addEventListener('change', function () {
-
     validateFile();
     checkFormValidity();
   });
@@ -57,13 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const isValidForm = validateForm();
     createButton.disabled = !isValidForm;
   }
-
-  // Add event listeners for input fields to validate in real time
-  productInput.addEventListener('input', validateProduct);
-  descriptionInput.addEventListener('input', validateDescription);
-  fileInput.addEventListener('change', validateFile);
-  priceInput.addEventListener('input', validatePrice);
-  categorySelect.addEventListener('change', validateCategory);
 
   // Function to validate the product field
   function validateProduct() {
@@ -127,7 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function validateForm() {
     const isProductValid = validateProduct();
     const isDescriptionValid = validateDescription();
-    const isFileValid = validateFile();
+    // If the route is /create, validate the file field, if not skip it
+    const isFileValid = window.location.pathname === '/create' ? validateFile() : true;
     const isPriceValid = validatePrice();
     const isCategoryValid = validateCategory();
 
